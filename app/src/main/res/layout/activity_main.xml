@@ -6,32 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Why Whine Just Dine!"
-        android:textSize="30dip"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.117" />
 
     <ImageView
-        android:layout_width="489dp"
-        android:layout_height="332dp"
+        android:layout_width="490dp"
+        android:layout_height="671dp"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/beer_can_chicken_1_7"
-        tools:layout_editor_absoluteX="-39dp"
-        tools:layout_editor_absoluteY="137dp" />
+        tools:layout_editor_absoluteX="-55dp"
+        tools:layout_editor_absoluteY="-43dp" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="72dp"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/why9logo"
+        tools:layout_editor_absoluteX="75dp"
+        tools:layout_editor_absoluteY="227dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#0000FF"
+        android:text="Why Whine Just Dine!"
+        android:textColor="#FFFFFF"
+        android:textSize="40dip"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="11dp" />
+        tools:layout_editor_absoluteY="83dp" />
+    app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.191" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

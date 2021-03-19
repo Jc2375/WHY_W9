@@ -1,67 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    android:layout_height="match_parent">
 
     <ImageView
-        android:layout_width="490dp"
-        android:layout_height="671dp"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/beer_can_chicken_1_7"
-        tools:layout_editor_absoluteX="-38dp"
-        tools:layout_editor_absoluteY="-38dp" />
+        android:id="@+id/imageView"
+        android:layout_width="411dp"
+        android:layout_height="732dp"
+        app:srcCompat="@color/teal_700"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-1dp" />
 
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="164dp"
+        tools:layout_editor_absoluteY="243dp" />
 
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="164dp"
+        tools:layout_editor_absoluteY="149dp" />
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#000000"
-        android:text="Register Your Account Here"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="118dp" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Register"
-        tools:layout_editor_absoluteX="156dp"
-        tools:layout_editor_absoluteY="482dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#000000"
-        android:text="Enter Your Email Below:"
-        android:textSize="25sp"
-        android:textColor="#FFFFFF"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="218dp" />
+        android:text="Username"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="156dp" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#000000"
-        android:text="TextView"
-        android:text="Enter Your Password Below:"
-        android:textColor="#FFFFFF"
-        android:textSize="25sp"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="348dp" />
+        android:text="Password"
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="260dp" />
 
-    app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.117" />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        tools:layout_editor_absoluteX="159dp"
+        tools:layout_editor_absoluteY="411dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register A New Account"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="47dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

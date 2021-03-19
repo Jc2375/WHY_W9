@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
@@ -15,4 +16,11 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:layout_width="457dp"
+        android:layout_height="161dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/beer_can_chicken_1_7"
+        tools:layout_editor_absoluteX="-23dp"
+        tools:layout_editor_absoluteY="155dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

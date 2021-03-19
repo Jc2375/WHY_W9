@@ -17,10 +17,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.117" />
 
-    <ImageView android:src="@drawable/beer_can_chicken_1_7"
+    <ImageView
+        android:layout_width="489dp"
+        android:layout_height="332dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/beer_can_chicken_1_7"
+        tools:layout_editor_absoluteX="-39dp"
+        tools:layout_editor_absoluteY="137dp" />
+
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="72dp"
-        android:layout_marginBottom="24dp"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/why9logo"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="11dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

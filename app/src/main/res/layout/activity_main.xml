@@ -9,15 +9,25 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="Why Whine Just Dine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ImageView android:src="@drawable/beer_can_chicken_1_7"
+
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="72dp"
-        android:layout_marginBottom="24dp"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/why9logo"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="16dp" />
 
+    <ImageView
+        android:layout_width="477dp"
+        android:layout_height="183dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/beer_can_chicken_1_7"
+        tools:layout_editor_absoluteX="-33dp"
+        tools:layout_editor_absoluteY="129dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,9 +19,10 @@
         app:srcCompat="@color/teal_700" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/mPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="@+id/textView3"
@@ -30,11 +31,11 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/inputUser"
+        android:id="@+id/mEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="94dp"
-        android:layout_marginTop="149dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="192dp"
         android:layout_marginBottom="49dp"
         android:ems="10"
         android:inputType="text"
@@ -83,7 +84,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/BregisterBack"
+        android:id="@+id/mRegisterBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onButtonClick"

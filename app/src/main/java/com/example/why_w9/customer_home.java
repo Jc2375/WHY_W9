@@ -24,8 +24,5 @@ public class customer_home extends AppCompatActivity
             Intent i=new Intent(customer_home.this, register.class );
             startActivity(i);
         }
-
-
-
     }
 }

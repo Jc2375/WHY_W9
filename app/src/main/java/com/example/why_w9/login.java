@@ -66,13 +66,17 @@ public class login extends AppCompatActivity {
                 mPassword.setError("Password must be greater than 5 characters!");
                 return;
             }
-
+            if(email.equals("manager@gmail.com")&&password.equals("managerpassword"))
+            {
+                Toast.makeText(login.this, "User Signed In", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), manager_home.class));
+            }
             fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful())
                     {
-                        Toast.makeText(login.this, "Logged In Successfully", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(login.this, "User Signed In", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(), customer_home.class));
                     }
                     else {

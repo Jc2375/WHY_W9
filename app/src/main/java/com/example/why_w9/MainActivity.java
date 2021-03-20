@@ -1,5 +1,4 @@
 package com.example.why_w9;
-//this project causes pain
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -21,5 +20,15 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
         }
     }
+    public void onButtonClick2(View v)
+    {
+        if(v.getId()== R.id.BRegister)
+        {
+            Intent i=new Intent(MainActivity.this, register.class );
+            startActivity(i);
+        }
+    }
+
+
 }
 

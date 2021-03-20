@@ -72,6 +72,6 @@ public class register extends Activity
                         Toast.makeText(register.this, "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                   }
               }
-          }
+          });
     }
 }

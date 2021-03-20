@@ -18,6 +18,7 @@ public class customer_home extends AppCompatActivity
         if(username.equals("jason"))
         {
             setContentView(R.layout.customer_home);
+            //kekw
         }
         else
         {

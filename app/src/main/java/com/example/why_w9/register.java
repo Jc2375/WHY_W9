@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 public class register extends Activity
 {
@@ -15,6 +16,14 @@ public class register extends Activity
     public void onButtonClick(View v)
     {
 
+        if(v.getId()== R.id.BregisterAttempt)
+        {
+            EditText a=(EditText)findViewById(R.id.inputEmail);
+            String str= a.getText().toString();
+            Intent i=new Intent(register.this, login.class );
+            i.putExtra("Email",str);
+            startActivity(i);
+        }
         if(v.getId()== R.id.BregisterBack)
         {
             Intent i=new Intent(register.this, MainActivity.class );

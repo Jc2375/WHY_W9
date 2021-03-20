@@ -20,7 +20,7 @@ public class login extends AppCompatActivity {
         {
             case R.id.BLoginAttempt:
             {
-                EditText a=(EditText)findViewById(R.id.inputUser);
+                EditText a=(EditText)findViewById(R.id.inputEmail);
                  String str= a.getText().toString();
                 Intent i=new Intent(login.this, customer_home.class );
                 i.putExtra("Username",str);

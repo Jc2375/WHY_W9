@@ -14,16 +14,6 @@ public class customer_home extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String username=getIntent().getStringExtra("Username");
-        if(username.equals("jason"))
-        {
-            setContentView(R.layout.customer_home);
-            //kekw
-        }
-        else
-        {
-            Intent i=new Intent(customer_home.this, register.class );
-            startActivity(i);
-        }
+
     }
 }

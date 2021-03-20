@@ -32,11 +32,11 @@ public class register extends Activity
         mRegisterBtn = findViewById(R.id.mRegisterBtn);
         fAuth = FirebaseAuth.getInstance();
 
-        if(fAuth.getCurrentUser() != null)
+        /*if(fAuth.getCurrentUser() != null)
         {
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
             finish();
-        }
+        }*/
 
     }
     public void onButtonClick(View v)
@@ -66,7 +66,7 @@ public class register extends Activity
                   if(task.isSuccessful())
                   {
                       Toast.makeText(register.this, "User Created", Toast.LENGTH_SHORT).show();
-                      startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                      startActivity(new Intent(getApplicationContext(), customer_home.class));
                   }
                   else {
                         Toast.makeText(register.this, "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();

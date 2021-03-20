@@ -7,12 +7,20 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class login extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
+
+        //mEmail = findViewById(R.id.mEmail);
+        //mPassword = findViewById(R.id.mPassword);
+        //mLoginBtn = findViewById(R.id.mRegisterBtn);
+        //fAuth = FirebaseAuth.getInstance();
+
     }
     public void onButtonClick(View v)
     {

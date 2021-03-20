@@ -34,7 +34,6 @@ public class login extends AppCompatActivity {
                  {
                      Intent i=new Intent(login.this, customer_home.class );
                      i.putExtra("Username",str);
-
                  }
                 Intent i=new Intent(login.this, customer_home.class );
                 i.putExtra("Username",str);

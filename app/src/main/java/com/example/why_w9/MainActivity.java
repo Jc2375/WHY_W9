@@ -21,17 +21,11 @@ public class MainActivity extends AppCompatActivity {
         }
         if(v.getId()== R.id.Bregister)
         {
-
-        }
-    }
-    public void onButtonClick2(View v)
-    {
-        if(v.getId()== R.id.BRegister)
-        {
             Intent i=new Intent(MainActivity.this, register.class );
             startActivity(i);
         }
     }
+
 
 
 }

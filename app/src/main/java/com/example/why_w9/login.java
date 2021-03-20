@@ -35,55 +35,53 @@ public class login extends AppCompatActivity {
 
         public void onButtonClick(View v)
         {
-            switch (v.getId()) {
+            switch (v.getId())
+            {
                 case R.id.BLoginAttempt:
                     {
-                        EditText a = (EditText) findViewById(R.id.inputEmail);
-                        String str = a.getText().toString();
-                        if (str.equals("manager@gmail.com"))
+
+                        String email = mEmail.getText().toString().trim();
+                        String password = mPassword.getText().toString().trim();
+
+                        if(TextUtils.isEmpty(email))
                         {
-                            Intent i = new Intent(login.this, customer_home.class);
-                            i.putExtra("Username", str);
+                            mEmail.setError("Email is Required");
+                            return;
                         }
+                        if(TextUtils.isEmpty(password))
+                        {
+                            mPassword.setError("Password is Required");
+                            return;
+                        }
+                        if(password.length() < 6)
+                        {
+                            mPassword.setError("Password must be greater than 5 characters!");
+                            return;
+                        }
+                        if(email.equals("manager@gmail.com")&&password.equals("managerpassword"))
+                        {
+                            Toast.makeText(login.this, "User Signed In", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), manager_home.class));
+                            return;
+
+                        }
+                        fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if(task.isSuccessful())
+                                {
+                                    Toast.makeText(login.this, "User Signed In", Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(getApplicationContext(), customer_home.class));
+                                }
+                                else {
+                                    Toast.makeText(login.this, "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
                     }
             }
 
-            String email = mEmail.getText().toString().trim();
-            String password = mPassword.getText().toString().trim();
 
-            if(TextUtils.isEmpty(email))
-            {
-                mEmail.setError("Email is Required");
-                return;
-            }
-            if(TextUtils.isEmpty(password))
-            {
-                mPassword.setError("Password is Required");
-                return;
-            }
-            if(password.length() < 6)
-            {
-                mPassword.setError("Password must be greater than 5 characters!");
-                return;
-            }
-            if(email.equals("manager@gmail.com")&&password.equals("managerpassword"))
-            {
-                Toast.makeText(login.this, "User Signed In", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(), manager_home.class));
-            }
-            fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if(task.isSuccessful())
-                    {
-                        Toast.makeText(login.this, "User Signed In", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(), customer_home.class));
-                    }
-                    else {
-                        Toast.makeText(login.this, "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
         }
 
     }

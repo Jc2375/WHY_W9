@@ -30,6 +30,11 @@ public class login extends AppCompatActivity {
             {
                 EditText a=(EditText)findViewById(R.id.inputEmail);
                  String str= a.getText().toString();
+                 if(str.equals("manager@gmail.com"))
+                 {
+                     Intent i=new Intent(login.this, customer_home.class );
+                     i.putExtra("Username",str);
+                 }
                 Intent i=new Intent(login.this, customer_home.class );
                 i.putExtra("Username",str);
                 startActivity(i);

@@ -72,7 +72,7 @@ public class login extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful())
                     {
-                        Toast.makeText(login.this, "User Created", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(login.this, "Logged In Successfully", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(), customer_home.class));
                     }
                     else {

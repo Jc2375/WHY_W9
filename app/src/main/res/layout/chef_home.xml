@@ -6,70 +6,82 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView5"
-        android:layout_width="334dp"
-        android:layout_height="174dp"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="39dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="518dp"
-        android:text="BIG BOSS LETS GO"
-        android:textColor="#F40707"
-        android:textSize="50sp"
+        android:id="@+id/textView8"
+        android:layout_width="305dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginBottom="599dp"
+        android:text="Chef Home Page"
+        android:textColor="#13FBF4"
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/BManageEmp"
+        android:id="@+id/BOrdersListChef"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="240dp"
-        android:layout_marginEnd="151dp"
-        android:layout_marginBottom="443dp"
-        android:text="Manage Employees"
+        android:layout_marginStart="243dp"
+        android:layout_marginTop="177dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="506dp"
+        android:text="Orders List"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/BManageOrderList"
+        android:id="@+id/BChefClocking"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="344dp"
-        android:layout_marginEnd="223dp"
-        android:layout_marginBottom="339dp"
-        android:text="Order List"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="177dp"
+        android:layout_marginEnd="237dp"
+        android:layout_marginBottom="506dp"
+        android:text="Clock In/Out"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/BManageTables"
+        android:id="@+id/BMenuChef"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="455dp"
-        android:layout_marginEnd="184dp"
-        android:layout_marginBottom="228dp"
-        android:text="Manage Tables"
+        android:layout_marginStart="146dp"
+        android:layout_marginTop="262dp"
+        android:layout_marginEnd="147dp"
+        android:layout_marginBottom="421dp"
+        android:text="View Menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="269dp"
+        android:layout_height="417dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="351dp"
+        android:layout_marginEnd="89dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/chef" />
 
     <Button
         android:id="@+id/bSignOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="669dp"
-        android:layout_marginEnd="300dp"
+        android:layout_marginEnd="298dp"
         android:layout_marginBottom="14dp"
         android:onClick="onButtonClick"
         android:text="Sign Out"
@@ -77,4 +89,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

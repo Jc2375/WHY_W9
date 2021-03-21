@@ -70,6 +70,18 @@ public class login extends AppCompatActivity {
                             startActivity(new Intent(getApplicationContext(), waiter_home.class));
                             return;
                         }
+                        if(email.equals("chef@gmail.com")&&password.equals("chefpassword"))
+                        {
+                            Toast.makeText(login.this, "User Signed In", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), chef_home.class));
+                            return;
+                        }
+                        if(email.equals("host@gmail.com")&&password.equals("hostpassword"))
+                        {
+                            Toast.makeText(login.this, "User Signed In", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), host_home.class));
+                            return;
+                        }
                         fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {

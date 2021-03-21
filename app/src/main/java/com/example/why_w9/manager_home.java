@@ -8,6 +8,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class manager_home extends AppCompatActivity
 {
@@ -17,7 +20,7 @@ public class manager_home extends AppCompatActivity
         setContentView(R.layout.manager_home);
 
     }
-
+/*
     public void onButtonClick(View v) {
         if (v.getId() == R.id.bSignOut) {
             Toast.makeText(manager_home.this, "User Signed Out Successfully", Toast.LENGTH_SHORT).show();
@@ -25,5 +28,9 @@ public class manager_home extends AppCompatActivity
             startActivity(i);
         }
     }
-
+*/
+    public void toManagerOptions(View v){
+        Intent intent = new Intent(this, ManageEmployeeOptions.class);
+        startActivity(intent);
+    }
 }

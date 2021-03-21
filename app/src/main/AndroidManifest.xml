@@ -2,16 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.why_w9">
 
-    <uses-permission android:name = "android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WHY_W9">
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,11 +19,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    <activity android:name=".login"> </activity>
-        <activity android:name=".register"> </activity>
-        <activity android:name=".customer_home"> </activity>
-        <activity android:name=".manager_home"> </activity>
-        <activity android:name=".waiter_home"> </activity>
+        <activity android:name=".login" />
+        <activity android:name=".register" />
+        <activity android:name=".customer_home" />
+        <activity android:name=".manager_home" />
+        <activity android:name=".waiter_home" />
+        <activity android:name=".ManageEmployeeOptions" />
+        <activity android:name=".EmployeePayroll"></activity>
     </application>
 
 </manifest>

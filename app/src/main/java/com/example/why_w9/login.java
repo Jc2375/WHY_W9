@@ -63,7 +63,12 @@ public class login extends AppCompatActivity {
                             Toast.makeText(login.this, "User Signed In", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(), manager_home.class));
                             return;
-
+                        }
+                        if(email.equals("waiter@gmail.com")&&password.equals("waiterpassword"))
+                        {
+                            Toast.makeText(login.this, "User Signed In", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), waiter_home.class));
+                            return;
                         }
                         fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override

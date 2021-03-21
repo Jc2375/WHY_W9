@@ -23,6 +23,7 @@
         <activity android:name=".register"> </activity>
         <activity android:name=".customer_home"> </activity>
         <activity android:name=".manager_home"> </activity>
+        <activity android:name=".waiter_home"> </activity>
     </application>
 
 </manifest>

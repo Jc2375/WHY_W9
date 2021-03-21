@@ -24,6 +24,8 @@
         <activity android:name=".customer_home"> </activity>
         <activity android:name=".manager_home"> </activity>
         <activity android:name=".waiter_home"> </activity>
+        <activity android:name=".chef_home"> </activity>
+        <activity android:name=".host_home"> </activity>
     </application>
 
 </manifest>

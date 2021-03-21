@@ -28,6 +28,7 @@
         <activity android:name=".EmployeePayroll"></activity>
         <activity android:name=".chef_home"> </activity>
         <activity android:name=".host_home"> </activity>
+        <activity android:name=".menu_home_canorder"> </activity>
     </application>
 
 </manifest>

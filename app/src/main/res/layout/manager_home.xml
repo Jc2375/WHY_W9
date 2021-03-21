@@ -29,6 +29,7 @@
         android:layout_marginTop="240dp"
         android:layout_marginEnd="151dp"
         android:layout_marginBottom="443dp"
+        android:onClick="onButtonClick"
         android:text="Manage Employees"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

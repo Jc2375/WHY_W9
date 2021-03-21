@@ -20,17 +20,18 @@ public class manager_home extends AppCompatActivity
         setContentView(R.layout.manager_home);
 
     }
-/*
+
     public void onButtonClick(View v) {
         if (v.getId() == R.id.bSignOut) {
             Toast.makeText(manager_home.this, "User Signed Out Successfully", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(manager_home.this, MainActivity.class);
             startActivity(i);
         }
+        if (v.getId() == R.id.BManageEmp) {
+            Intent i = new Intent(manager_home.this, ManageEmployeeOptions.class);
+            startActivity(i);
+        }
     }
-*/
-    public void toManagerOptions(View v){
-        Intent intent = new Intent(this, ManageEmployeeOptions.class);
-        startActivity(intent);
-    }
+
+
 }

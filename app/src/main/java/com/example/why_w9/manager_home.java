@@ -3,7 +3,9 @@ package com.example.why_w9;
 import android.app.Activity;
 import android.os.Bundle;
 
-public class manager_home extends Activity
+import androidx.appcompat.app.AppCompatActivity;
+
+public class manager_home extends AppCompatActivity
 {
 
     @Override

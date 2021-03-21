@@ -88,6 +88,7 @@
         android:layout_marginTop="202dp"
         android:layout_marginEnd="52dp"
         android:layout_marginBottom="481dp"
+        android:onClick="onButtonClick"
         android:text="View Menu"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"

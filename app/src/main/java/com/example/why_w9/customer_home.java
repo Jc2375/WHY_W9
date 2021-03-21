@@ -14,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth; //logout part 1
 import com.google.firebase.auth.FirebaseUser; //logout part 2
 
+import java.util.Random;
+
 public class customer_home extends AppCompatActivity
 {
     private FirebaseAuth mFirebaseAuth; //logout part 3
@@ -31,10 +33,9 @@ public class customer_home extends AppCompatActivity
     {
         super.onStart();
         FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
-        if (mFirebaseUser == null){
-            startActivity(new Intent (this,login.class));
+        if (mFirebaseUser == null) {
+            startActivity(new Intent(this, login.class));
         }
-
     }
     public void onButtonClick(View v) {
         if (v.getId() == R.id.bSignOut) {

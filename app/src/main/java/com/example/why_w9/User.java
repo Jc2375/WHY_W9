@@ -9,7 +9,7 @@ public class User
         this.email="Customer@gmail.com";
         this.password=1234;
     }
-    public User(String email, double paswword)
+    public User(String email, double password)
     {
         this.email=email;
         this.password=password;

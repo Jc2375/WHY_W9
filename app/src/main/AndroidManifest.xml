@@ -29,6 +29,7 @@
         <activity android:name=".chef_home"> </activity>
         <activity android:name=".host_home"> </activity>
         <activity android:name=".menu_home_canorder"> </activity>
+        <activity android:name=".modify_account"> </activity>
     </application>
 
 </manifest>

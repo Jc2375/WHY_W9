@@ -44,6 +44,10 @@ public class customer_home extends AppCompatActivity
             Intent i = new Intent(customer_home.this, MainActivity.class);
             startActivity(i);
         }
+        if (v.getId() == R.id.bModifyAccount) {
+            Intent i = new Intent(customer_home.this, modify_account.class);
+            startActivity(i);
+        }
     }
     //Up to here
 

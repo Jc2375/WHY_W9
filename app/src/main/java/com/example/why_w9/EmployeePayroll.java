@@ -42,6 +42,7 @@ public class EmployeePayroll extends AppCompatActivity {
         info.add("Pay this week:");
 
 
+
         payroll_Info.put(nameList.get(0),info);
         payroll_Info.put(nameList.get(1),info);
         payroll_Info.put(nameList.get(2),info);

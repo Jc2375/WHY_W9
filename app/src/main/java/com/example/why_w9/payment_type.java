@@ -11,7 +11,6 @@ public class payment_type extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.payment_type);
-
     }
 }
 

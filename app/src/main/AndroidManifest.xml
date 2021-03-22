@@ -35,6 +35,8 @@
         <activity android:name=".menu_home_canorder" />
         <activity android:name=".modify_account" />
         <activity android:name=".payment_type" />
+        <activity android:name=".customer_reservation" />
+        <activity android:name=".order_type" />
     </application>
 
 </manifest>

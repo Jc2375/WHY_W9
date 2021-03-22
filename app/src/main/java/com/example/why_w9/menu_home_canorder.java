@@ -14,9 +14,9 @@ public class menu_home_canorder extends AppCompatActivity {
         setContentView(R.layout.menu_home_canorder);
     }
     public void onButtonClick(View v) {
-        if (v.getId() == R.id.BCashPayment) {
-            Toast.makeText(menu_home_canorder.this, "Select Choice of Payment", Toast.LENGTH_SHORT).show();
-            Intent i = new Intent(menu_home_canorder.this, payment_type.class);
+        if (v.getId() == R.id.BConfirmOrder) {
+            Toast.makeText(menu_home_canorder.this, "Select Order Type", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(menu_home_canorder.this, order_type.class);
             startActivity(i);
         }
 

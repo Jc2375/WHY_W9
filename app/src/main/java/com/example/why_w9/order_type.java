@@ -15,7 +15,7 @@ public class order_type extends AppCompatActivity {
     }
     public void onButtonClick(View v) {
         if (v.getId() == R.id.bDineIn) {
-            Toast.makeText(order_type.this, "Select Order Type", Toast.LENGTH_SHORT).show();
+            Toast.makeText(order_type.this, "Select Payment Type", Toast.LENGTH_SHORT).show();
             Bundle bundle=new Bundle();
             bundle.putBoolean("Delivery",false);
             Intent i = new Intent(order_type.this, payment_type.class);
@@ -23,7 +23,7 @@ public class order_type extends AppCompatActivity {
             startActivity(i);
         }
         if (v.getId() == R.id.bTakeout) {
-            Toast.makeText(order_type.this, "Select Order Type", Toast.LENGTH_SHORT).show();
+            Toast.makeText(order_type.this, "Select Payment Type", Toast.LENGTH_SHORT).show();
             Bundle bundle=new Bundle();
             bundle.putBoolean("Delivery",false);
             Intent i = new Intent(order_type.this, payment_type.class);
@@ -31,10 +31,10 @@ public class order_type extends AppCompatActivity {
             startActivity(i);
         }
         if (v.getId() == R.id.bDelivery) {
-            Toast.makeText(order_type.this, "Select Order Type", Toast.LENGTH_SHORT).show();
+            Toast.makeText(order_type.this, "Input Address", Toast.LENGTH_SHORT).show();
             Bundle bundle=new Bundle();
             bundle.putBoolean("Delivery",true);
-            Intent i = new Intent(order_type.this, payment_type.class);
+            Intent i = new Intent(order_type.this, delivery_address.class);
             i.putExtras(bundle);
             startActivity(i);
         }

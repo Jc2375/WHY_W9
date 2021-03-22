@@ -40,6 +40,7 @@
         <activity android:name=".order_type" />
         <activity android:name=".driver_available_orders" />
         <activity android:name=".driver_current_order" />
+        <activity android:name=".delivery_address" />
 
     </application>
 

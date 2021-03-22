@@ -43,6 +43,7 @@
                     android:id="@+id/checkBox35"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:onClick="onButtonClick"
                     android:text="Chicken"
                     android:textSize="20sp" />
 
@@ -50,6 +51,7 @@
                     android:id="@+id/checkBox36"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:onClick="onButtonClick"
                     android:text="Pasta"
                     android:textSize="20sp" />
 
@@ -57,6 +59,7 @@
                     android:id="@+id/checkBox37"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:onClick="onButtonClick"
                     android:text="Salad"
                     android:textSize="20sp" />
 
@@ -64,6 +67,7 @@
                     android:id="@+id/checkBox38"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:onClick="onButtonClick"
                     android:text="Steak"
                     android:textSize="20sp" />
 
@@ -71,6 +75,7 @@
                     android:id="@+id/checkBox39"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:onClick="onButtonClick"
                     android:text="Coca Cola"
                     android:textSize="20sp" />
 
@@ -78,6 +83,7 @@
                     android:id="@+id/checkBox34"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:onClick="onButtonClick"
                     android:text="Lemonade"
                     android:textSize="20sp" />
 
@@ -85,6 +91,7 @@
                     android:id="@+id/checkBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:onClick="onButtonClick"
                     android:text="Iced Tea"
                     android:textSize="20sp" />
 
@@ -120,10 +127,9 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView19"
+            android:id="@+id/TOrder1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Chicken"
             android:textSize="30sp" />
 
         <TextView

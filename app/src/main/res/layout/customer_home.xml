@@ -19,13 +19,14 @@
         tools:text="Customer Home Page" />
 
     <Button
-        android:id="@+id/viewMenuCustomer"
+        android:id="@+id/BMenuCustomer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="55dp"
         android:layout_marginTop="141dp"
         android:layout_marginEnd="238dp"
         android:layout_marginBottom="542dp"
+        android:onClick="onButtonClick"
         android:text="View Menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

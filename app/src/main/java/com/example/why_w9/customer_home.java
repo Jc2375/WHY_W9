@@ -52,6 +52,10 @@ public class customer_home extends AppCompatActivity
             Intent i = new Intent(customer_home.this, customer_reservation.class);
             startActivity(i);
         }
+        if (v.getId() == R.id.BMenuCustomer) {
+            Intent i = new Intent(customer_home.this, menu_home_canorder.class);
+            startActivity(i);
+        }
     }
     //Up to here
 

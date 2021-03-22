@@ -33,6 +33,15 @@ public class EmployeeSchedules extends AppCompatActivity {
         Intent intent = new Intent(this,DriverSchedules.class);
         startActivity(intent);
     }
+    public void backToManagerEmpOptions(View v){
+        Intent intent = new Intent (this,ManageEmployeeOptions.class);
+        startActivity(intent);
+
+    }
+    public void backToManagerHome(View v){
+        Intent intent = new Intent (this,manager_home.class);
+        startActivity(intent);
+    }
 
 
 

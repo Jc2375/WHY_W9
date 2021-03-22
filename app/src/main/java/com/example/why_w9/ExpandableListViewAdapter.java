@@ -11,9 +11,10 @@ import java.util.HashMap;
 import java.util.List;
 
 public class ExpandableListViewAdapter extends BaseExpandableListAdapter {
-    private Context context;
-    private List<String> namesList;
-    private HashMap<String,List<String>> infoList;
+    //got rid of private
+     private Context context;
+     private List<String> namesList;
+     private HashMap<String,List<String>> infoList;
 
     public ExpandableListViewAdapter(Context context, List<String> namesList, HashMap<String, List<String>> infoList) {
         this.context = context;
@@ -83,5 +84,11 @@ public class ExpandableListViewAdapter extends BaseExpandableListAdapter {
     @Override
     public boolean isChildSelectable(int groupPosition, int childPosition) {
         return true;
+    }
+
+    public void updateExpListView(List<String> names,List<String> schedule,int num){
+
+        this.infoList.put(names.get(num),schedule);
+        notifyDataSetChanged();
     }
 }

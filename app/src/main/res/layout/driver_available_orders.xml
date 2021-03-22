@@ -5,9 +5,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/bDeliveryAddress4"
+        android:layout_width="331dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="417dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="245dp"
+        android:text="Piscataway, NJ"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bDeliveryAddress2"
+        android:layout_width="331dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="216dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="446dp"
+        android:text="New Brunswick, NJ"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bDeliveryAddress3"
+        android:layout_width="331dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="318dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="344dp"
+        android:text="East Brunswick, NJ"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView8"
-
         android:layout_width="345dp"
         android:layout_height="80dp"
         android:layout_marginStart="33dp"
@@ -17,6 +58,20 @@
         android:text="Available Orders:"
         android:textColor="#FFC0CB"
         android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bDeliveryAddress1"
+        android:layout_width="331dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="126dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="536dp"
+        android:text="Hackensack, NJ"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

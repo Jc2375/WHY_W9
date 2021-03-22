@@ -30,9 +30,25 @@
         android:layout_marginTop="136dp"
         android:layout_marginEnd="237dp"
         android:layout_marginBottom="545dp"
-        android:text="Address:"
+        android:text="Address: "
         android:textColor="#000000"
         android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textCustomerAddress"
+        android:layout_width="340dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="192dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="479dp"
+        android:text="500 Bartholomew Road, Piscataway, NJ "
+        android:textColor="#000000"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,6 +71,22 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/textCustomerTime"
+        android:layout_width="340dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="335dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="336dp"
+        android:text="17:16, 3/22/2021"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/textOrderDetails"
         android:layout_width="182dp"
         android:layout_height="53dp"
@@ -65,6 +97,22 @@
         android:text="Order Details:"
         android:textColor="#000000"
         android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textCustomerOrder"
+        android:layout_width="340dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="475dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="196dp"
+        android:text="1x Chicken, 2x Lemonade"
+        android:textColor="#000000"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

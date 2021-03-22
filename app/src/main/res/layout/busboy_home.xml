@@ -18,9 +18,15 @@
         android:id="@+id/BBusboySignout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="639dp"
+        android:layout_marginEnd="272dp"
+        android:layout_marginBottom="44dp"
         android:text="Sign out"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="639dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/BBusboyTableStatus"
@@ -30,11 +36,20 @@
         android:layout_marginTop="219dp"
         android:layout_marginEnd="197dp"
         android:layout_marginBottom="464dp"
+        android:onClick="onButtonClick"
         android:text="Table Status"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/chef"
+        tools:layout_editor_absoluteX="188dp"
+        tools:layout_editor_absoluteY="436dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

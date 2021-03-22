@@ -41,7 +41,8 @@
         <activity android:name=".driver_available_orders" />
         <activity android:name=".driver_current_order" />
         <activity android:name=".delivery_address" />
-
+        <activity android:name=".busboy_tablestatus" />
+        <activity android:name=".busboy_home" />
     </application>
 
 </manifest>

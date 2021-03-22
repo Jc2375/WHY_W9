@@ -20,6 +20,9 @@ public class busboy_home extends AppCompatActivity
             Intent i = new Intent(busboy_home.this, MainActivity.class);
             startActivity(i);
         }
-
+        if (v.getId() == R.id.BBusboyTableStatus) {
+            Intent i = new Intent(busboy_home.this, busboy_tablestatus.class);
+            startActivity(i);
+        }
     }
 }

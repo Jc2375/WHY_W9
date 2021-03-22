@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -29,6 +30,14 @@ public class modify_account extends AppCompatActivity {
 
     }
     public void onButtonClick(View v) {
+        EditText mEmail, mPassword;
+
+        mEmail = findViewById(R.id.inputEmail);
+        mPassword = findViewById(R.id.inputPassword);
+
+        String email = mEmail.getText().toString().trim();
+        String password = mPassword.getText().toString().trim();
+
         if (v.getId() == R.id.bSignOut) {
             mFirebaseAuth.signOut();
             Toast.makeText(modify_account.this, "User Signed Out Successfully", Toast.LENGTH_SHORT).show();
@@ -50,5 +59,33 @@ public class modify_account extends AppCompatActivity {
                         }
                     });
         }
+
+        if (v.getId() == R.id.bEditEmail) {
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+            user.updateEmail(email)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(modify_account.this, "User Account Email Successfully Changed", Toast.LENGTH_SHORT).show();
+
+                            }
+                        }
+                    });
+        }
+        if (v.getId() == R.id.bEditEmail) {
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            user.updatePassword(password)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(modify_account.this, "User Account Password Successfully Changed", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+        }
+
     }
 }

@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WHY_W9">
-        <activity android:name=".EmployeeSchedules"></activity>
+        <activity android:name=".DriverSchedules"></activity>
+        <activity android:name=".BusboySchedules" />
+        <activity android:name=".WaiterSchedules" />
+        <activity android:name=".ChefSchedules" />
+        <activity android:name=".EmployeeSchedules" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,18 +23,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".login"></activity>
-        <activity android:name=".register"></activity>
-        <activity android:name=".customer_home"></activity>
-        <activity android:name=".manager_home"></activity>
-        <activity android:name=".waiter_home"></activity>
+        <activity android:name=".login" />
+        <activity android:name=".register" />
+        <activity android:name=".customer_home" />
+        <activity android:name=".manager_home" />
+        <activity android:name=".waiter_home" />
         <activity android:name=".ManageEmployeeOptions" />
         <activity android:name=".EmployeePayroll" />
-        <activity android:name=".chef_home"></activity>
-        <activity android:name=".host_home"></activity>
-        <activity android:name=".menu_home_canorder"></activity>
-        <activity android:name=".modify_account"></activity>
-        <activity android:name=".payment_type"></activity>
+        <activity android:name=".chef_home" />
+        <activity android:name=".host_home" />
+        <activity android:name=".menu_home_canorder" />
+        <activity android:name=".modify_account" />
+        <activity android:name=".payment_type" />
     </application>
 
 </manifest>

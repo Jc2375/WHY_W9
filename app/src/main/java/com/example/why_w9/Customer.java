@@ -3,7 +3,7 @@ package com.example.why_w9;
 public class Customer extends User{
     String email;
     double password;
-    public Customer(String email, double paswword) {
+    public Customer(String email, double password) {
         this.email=email;
         this.password=password;
     }

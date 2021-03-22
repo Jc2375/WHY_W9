@@ -64,6 +64,12 @@ public class login extends AppCompatActivity {
                             startActivity(new Intent(getApplicationContext(), manager_home.class));
                             return;
                         }
+                        if(email.equals("driver@gmail.com")&&password.equals("driverpassword"))
+                        {
+                            Toast.makeText(login.this, "User Signed In", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), driver_home.class));
+                            return;
+                        }
                         if(email.equals("waiter@gmail.com")&&password.equals("waiterpassword"))
                         {
                             Toast.makeText(login.this, "User Signed In", Toast.LENGTH_SHORT).show();

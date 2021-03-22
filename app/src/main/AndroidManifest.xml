@@ -28,6 +28,7 @@
         <activity android:name=".customer_home" />
         <activity android:name=".manager_home" />
         <activity android:name=".waiter_home" />
+        <activity android:name=".driver_home" />
         <activity android:name=".ManageEmployeeOptions" />
         <activity android:name=".EmployeePayroll" />
         <activity android:name=".chef_home" />
@@ -37,6 +38,9 @@
         <activity android:name=".payment_type" />
         <activity android:name=".customer_reservation" />
         <activity android:name=".order_type" />
+        <activity android:name=".driver_available_orders" />
+        <activity android:name=".driver_current_order" />
+
     </application>
 
 </manifest>

@@ -39,6 +39,7 @@ public class ChefSchedules extends AppCompatActivity {
 
 
         List<String> days = new ArrayList<>();
+
         days.add("Monday:");
         days.add("Tuesday:");
         days.add("Wednesday:");
@@ -71,13 +72,14 @@ public class ChefSchedules extends AppCompatActivity {
         if (chefName.compareTo(chefList.get(0)) == 0) {
 
             List<String> newDays = new ArrayList<>();
-            newDays.add("Monday:");
-            newDays.add("Tuesday:");
-            newDays.add("Wednesday:");
-            newDays.add("Thursday:");
-            newDays.add("Friday:");
-            newDays.add("Saturday:");
-            newDays.add("Sunday:");
+            newDays.add((String) listViewAdapter.getChild(0,0));
+            newDays.add((String) listViewAdapter.getChild(0,1));
+            newDays.add((String) listViewAdapter.getChild(0,2));
+            newDays.add((String) listViewAdapter.getChild(0,3));
+            newDays.add((String) listViewAdapter.getChild(0,4));
+            newDays.add((String) listViewAdapter.getChild(0,5));
+            newDays.add((String) listViewAdapter.getChild(0,6));
+
 
             if (day.compareTo("Monday") == 0) {
                 newDays.set(0,"Monday:" + start + "-" + end);
@@ -85,7 +87,7 @@ public class ChefSchedules extends AppCompatActivity {
             if (day.compareTo("Tuesday") == 0) {
                 newDays.set(1,"Tuesday:" + start + "-" + end);
             }
-            if (day.compareTo("MWednesday") == 0) {
+            if (day.compareTo("Wednesday") == 0) {
                 newDays.set(2,"Wednesday:" + start + "-" + end);
             }
             if (day.compareTo("Thursday") == 0) {
@@ -104,13 +106,13 @@ public class ChefSchedules extends AppCompatActivity {
         }
         else if(chefName.compareTo(chefList.get(1))==0){
             List<String> newDays = new ArrayList<>();
-            newDays.add("Monday:");
-            newDays.add("Tuesday:");
-            newDays.add("Wednesday:");
-            newDays.add("Thursday:");
-            newDays.add("Friday:");
-            newDays.add("Saturday:");
-            newDays.add("Sunday:");
+            newDays.add((String) listViewAdapter.getChild(1,0));
+            newDays.add((String) listViewAdapter.getChild(1,1));
+            newDays.add((String) listViewAdapter.getChild(1,2));
+            newDays.add((String) listViewAdapter.getChild(1,3));
+            newDays.add((String) listViewAdapter.getChild(1,4));
+            newDays.add((String) listViewAdapter.getChild(1,5));
+            newDays.add((String) listViewAdapter.getChild(1,6));
 
             if (day.compareTo("Monday") == 0) {
                 newDays.set(0,"Monday:" + start + "-" + end);
@@ -118,7 +120,7 @@ public class ChefSchedules extends AppCompatActivity {
             if (day.compareTo("Tuesday") == 0) {
                 newDays.set(1,"Tuesday:" + start + "-" + end);
             }
-            if (day.compareTo("MWednesday") == 0) {
+            if (day.compareTo("Wednesday") == 0) {
                 newDays.set(2,"Wednesday:" + start + "-" + end);
             }
             if (day.compareTo("Thursday") == 0) {

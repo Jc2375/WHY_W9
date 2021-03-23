@@ -9,19 +9,25 @@
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="79dp"
+        android:layout_marginEnd="156dp"
+        android:layout_marginBottom="599dp"
         android:text="Busboy"
         android:textSize="40sp"
-        tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="79dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/BBusboySignout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="639dp"
-        android:layout_marginEnd="272dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="667dp"
+        android:layout_marginEnd="294dp"
+        android:layout_marginBottom="16dp"
         android:text="Sign out"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,26 +36,30 @@
 
     <Button
         android:id="@+id/BBusboyTableStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="73dp"
-        android:layout_marginTop="219dp"
-        android:layout_marginEnd="197dp"
-        android:layout_marginBottom="464dp"
+        android:layout_width="146dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="173dp"
+        android:layout_marginEnd="149dp"
+        android:layout_marginBottom="498dp"
         android:onClick="onButtonClick"
         android:text="Table Status"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/chef"
-        tools:layout_editor_absoluteX="188dp"
-        tools:layout_editor_absoluteY="436dp" />
+        android:layout_width="252dp"
+        android:layout_height="351dp"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="251dp"
+        android:layout_marginEnd="85dp"
+        android:layout_marginBottom="129dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/busboyhand" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -55,7 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
-        android:layout_marginTop="455dp"
+        android:layout_marginTop="420dp"
         android:layout_marginEnd="184dp"
         android:layout_marginBottom="228dp"
         android:text="Manage Tables"
@@ -78,4 +78,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/BManageInventory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="35dp"
+        android:text="Check Inventory"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BManageTables" />
+
+    <Button
+        android:id="@+id/BManageAnalytics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="35dp"
+        android:text="Check Analytics"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BManageInventory" />
 </androidx.constraintlayout.widget.ConstraintLayout>

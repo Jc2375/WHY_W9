@@ -74,7 +74,7 @@ public class modify_account extends AppCompatActivity {
                         }
                     });
         }
-        if (v.getId() == R.id.bEditEmail) {
+        if (v.getId() == R.id.bEditPassword) {
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             user.updatePassword(password)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {

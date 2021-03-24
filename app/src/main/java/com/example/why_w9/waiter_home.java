@@ -1,6 +1,5 @@
 package com.example.why_w9;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -19,11 +18,15 @@ public class waiter_home extends AppCompatActivity
     {
         if(v.getId()== R.id.BMenuWaiter)
         {
-            Intent i=new Intent(waiter_home.this, menu_home_canorder.class );
+            Toast.makeText(waiter_home.this, "User Signed Out Successfully", Toast.LENGTH_SHORT).show();
+            Bundle bundle=new Bundle();
+            bundle.putString("usertype","waiter");
+            Intent i = new Intent(waiter_home.this, menu_home_canorder3.class);
+            i.putExtras(bundle);
             startActivity(i);
         }
-        if (v.getId() == R.id.bSignOut) {
-            Toast.makeText(waiter_home.this, "User Signed Out Successfully", Toast.LENGTH_SHORT).show();
+        if (v.getId() == R.id.bSignOut)
+        {
             Intent i = new Intent(waiter_home.this, MainActivity.class);
             startActivity(i);
         }

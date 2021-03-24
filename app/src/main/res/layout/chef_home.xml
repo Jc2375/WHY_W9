@@ -57,6 +57,7 @@
         android:layout_marginTop="262dp"
         android:layout_marginEnd="147dp"
         android:layout_marginBottom="421dp"
+        android:onClick="onButtonClick"
         android:text="View Menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

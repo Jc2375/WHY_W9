@@ -71,6 +71,7 @@
         android:layout_marginTop="200dp"
         android:layout_marginEnd="54dp"
         android:layout_marginBottom="483dp"
+        android:onClick="onButtonClick"
         android:text="View Menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

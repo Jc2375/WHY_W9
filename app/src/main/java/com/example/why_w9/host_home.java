@@ -20,5 +20,13 @@ public class host_home extends AppCompatActivity {
             Intent i = new Intent(host_home.this, MainActivity.class);
             startActivity(i);
         }
+        if (v.getId() == R.id.BMenuHost) {
+            Toast.makeText(host_home.this, "User Signed Out Successfully", Toast.LENGTH_SHORT).show();
+            Bundle bundle=new Bundle();
+            bundle.putString("usertype","host");
+            Intent i = new Intent(host_home.this, menu_home_canorder3.class);
+            i.putExtras(bundle);
+            startActivity(i);
+        }
     }
 }

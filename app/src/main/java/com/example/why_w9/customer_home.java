@@ -1,20 +1,14 @@
 package com.example.why_w9;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth; //logout part 1
-import com.google.firebase.auth.FirebaseUser; //logout part 2
-
-import java.util.Random;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class customer_home extends AppCompatActivity
 {
@@ -53,7 +47,11 @@ public class customer_home extends AppCompatActivity
             startActivity(i);
         }
         if (v.getId() == R.id.BMenuCustomer) {
-            Intent i = new Intent(customer_home.this, menu_home_canorder.class);
+            Toast.makeText(customer_home.this, "View Menu", Toast.LENGTH_SHORT).show();
+            Bundle bundle=new Bundle();
+            bundle.putString("usertype","customer");
+            Intent i = new Intent(customer_home.this, menu_home_canorder3.class);
+            i.putExtras(bundle);
             startActivity(i);
         }
     }

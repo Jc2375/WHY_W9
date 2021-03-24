@@ -127,6 +127,7 @@ public class menu_home_canorder3 extends AppCompatActivity {
                 startActivity(i);
             }
         }
+
        /* CheckBox checkBox = (CheckBox)v;
         if(checkBox.isChecked())
         {

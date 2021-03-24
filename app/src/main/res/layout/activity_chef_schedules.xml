@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clickable="false"
     android:orientation="vertical"
     android:padding="8dp"
     tools:context=".ChefSchedules">
@@ -16,7 +17,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="447dp">
 
         <Button
             android:id="@+id/backBtn_cs"
@@ -27,34 +30,14 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <EditText
-            android:id="@+id/editTextStartTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Start Time"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextChefName" />
-
-        <EditText
-            android:id="@+id/editTextEndTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="End Time"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextStartTime" />
-
         <Button
             android:id="@+id/scheduleEmployeeBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="addShift"
             android:text="Schedule"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextEndTime" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <EditText
             android:id="@+id/editTextChefName"
@@ -66,15 +49,57 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/editTextDay"
+        <Spinner
+            android:id="@+id/dayOptionSpinner"
             android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="NameDay"
-            app:layout_constraintStart_toEndOf="@+id/editTextChefName"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toEndOf="@+id/textViewDay_c"
+            app:layout_constraintTop_toBottomOf="@+id/editTextChefName" />
+
+        <Spinner
+            android:id="@+id/timeSpinnerStart"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toEndOf="@+id/textViewStart_c"
+            app:layout_constraintTop_toBottomOf="@+id/dayOptionSpinner" />
+
+        <Spinner
+            android:id="@+id/timeSpinnerEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toEndOf="@+id/textViewEnd_c"
+            app:layout_constraintTop_toBottomOf="@+id/timeSpinnerStart" />
+
+        <TextView
+            android:id="@+id/textViewStart_c"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Start Time:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDay_c" />
+
+        <TextView
+            android:id="@+id/textViewEnd_c"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            android:text="End Time:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewStart_c" />
+
+        <TextView
+            android:id="@+id/textViewDay_c"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Day:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextChefName" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

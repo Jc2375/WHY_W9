@@ -1,5 +1,5 @@
 package com.example.why_w9;
-//can you see this
+//hello
 import android.app.Activity;
 import android.os.Bundle;
 

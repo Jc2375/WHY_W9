@@ -23,7 +23,7 @@ public class delivery_address extends AppCompatActivity {
     }
     public void onButtonClick(View v) {
         if (v.getId() == R.id.BDeliveryAddress) {
-            //String email = FirebaseAuth.getInstance().getUid();
+            String uid= FirebaseAuth.getInstance().getCurrentUser().getUid();
 
             Customers customers;
             EditText Name, Address, City, State, Zipcode;
@@ -41,7 +41,7 @@ public class delivery_address extends AppCompatActivity {
             customers.setCity(City.getText().toString().trim());
             customers.setState(State.getText().toString().trim());
             customers.setZipcode(Zipcode.getText().toString().trim());
-            reff.push().setValue(customers);
+            reff.child(uid).setValue(customers);
 
             Toast.makeText(delivery_address.this, "Select Payment Type", Toast.LENGTH_SHORT).show();
             Bundle bundle=new Bundle();

@@ -2,10 +2,18 @@ package com.example.why_w9;
 
 public class Customers {
 
-    private String Name, Address, City, State, Zipcode;
+    private String Email, Name, Address, Password, City, State, Zipcode;
 
     public Customers() {
 
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
     }
 
     public String getName() {
@@ -22,6 +30,14 @@ public class Customers {
 
     public void setAddress(String address) {
         Address = address;
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String password) {
+        Password = password;
     }
 
     public String getCity() {

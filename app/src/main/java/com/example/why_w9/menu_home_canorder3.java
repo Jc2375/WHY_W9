@@ -27,6 +27,7 @@ public class menu_home_canorder3 extends AppCompatActivity {
     private ArrayList<food_item> food_items;
     private RecyclerAdapter recyclerAdapter;
     private Context mConxtext;
+
     Button b, c;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +59,14 @@ public class menu_home_canorder3 extends AppCompatActivity {
         food_items=new ArrayList<>();
         ClearAll();
         GetDataFromFirebase();
+
     }
+    /*public void onClick(View v,int position,boolean isLongCLick) {
+
+        Intent i = new Intent(menu_home_canorder3.this, food_detail.class);
+        i.putExtra("FoodId",recyclerAdapter.getReference(position).getKey()) ;
+        startActivity(i);
+    }*/
     private void GetDataFromFirebase()
     {
         Query query= myRef.child("Menu");

@@ -50,7 +50,7 @@ public class customer_home extends AppCompatActivity
             Toast.makeText(customer_home.this, "View Menu", Toast.LENGTH_SHORT).show();
             Bundle bundle=new Bundle();
             bundle.putString("usertype","customer");
-            Intent i = new Intent(customer_home.this, menu_home_canorder3.class);
+            Intent i = new Intent(customer_home.this, menu_home_canorder.class);
             i.putExtras(bundle);
             startActivity(i);
         }

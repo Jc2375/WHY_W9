@@ -21,7 +21,7 @@ public class waiter_home extends AppCompatActivity
             Toast.makeText(waiter_home.this, "User Signed Out Successfully", Toast.LENGTH_SHORT).show();
             Bundle bundle=new Bundle();
             bundle.putString("usertype","waiter");
-            Intent i = new Intent(waiter_home.this, menu_home_canorder3.class);
+            Intent i = new Intent(waiter_home.this, menu_home_canorder.class);
             i.putExtras(bundle);
             startActivity(i);
         }

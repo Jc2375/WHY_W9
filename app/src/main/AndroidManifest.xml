@@ -14,7 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WHY_W9"
         tools:replace="android:theme">
-        <activity android:name=".Cart"></activity>
+        <activity android:name=".OperationsInformation"></activity>
+        <activity android:name=".DailyTraffic" />
+        <activity android:name=".AnalyticsOptions" />
+        <activity android:name=".Cart" />
         <activity android:name=".DriverSchedules" />
         <activity android:name=".BusboySchedules" />
         <activity android:name=".WaiterSchedules" />
@@ -40,7 +43,7 @@
         <activity android:name=".menu_home_canorder" />
         <activity android:name=".modify_account" />
         <activity android:name=".payment_type" />
-        <activity android:name=".PaymentDetails"/>
+        <activity android:name=".PaymentDetails" />
         <activity android:name=".customer_reservation" />
         <activity android:name=".order_type" />
         <activity android:name=".driver_available_orders" />

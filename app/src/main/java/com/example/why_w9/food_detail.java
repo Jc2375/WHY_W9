@@ -3,6 +3,7 @@ package com.example.why_w9;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +18,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import android.view.View;
+import Database.*;
+
+import android.content.Intent;
+
+
 public class food_detail extends AppCompatActivity {
     TextView food_name, food_price, food_description;
     ImageView food_image;
@@ -27,6 +34,9 @@ public class food_detail extends AppCompatActivity {
     String foodId;
     FirebaseDatabase database;
     DatabaseReference foods;
+
+    Food currentFood;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +46,21 @@ public class food_detail extends AppCompatActivity {
 
         numberButton=(ElegantNumberButton)findViewById(R.id.number_button);
         btnCart=(FloatingActionButton)findViewById(R.id.btnCart);
+
+        btnCart.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                new Database(getBaseContext()).addToCart(new Order(
+                        foodId,
+                        currentFood.getName(),
+                        numberButton.getNumber(),
+                        currentFood.getPrice(),
+                        currentFood.getDiscount()
+                ));
+                Toast.makeText(food_detail.this, "Added to Cart", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         food_description = (TextView)findViewById(R.id.food_description);
         food_name=(TextView)findViewById(R.id.food_name);
         food_price=(TextView)findViewById(R.id.food_price);
@@ -57,12 +82,12 @@ public class food_detail extends AppCompatActivity {
         foods.child(foodId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Food food= dataSnapshot.getValue(Food.class);
-                Picasso.get().load(food.getImage()).into(food_image);
-                collapsingToolbarLayout.setTitle(food.getName());
-                food_price.setText(food.getPrice());
-                food_name.setText(food.getName());
-                food_description.setText(food.getDescription());
+                currentFood = dataSnapshot.getValue(Food.class); //overwritten as per part 5 video instruction
+                Picasso.get().load(currentFood.getImage()).into(food_image); //overwritten as per part 5 video instruction
+                collapsingToolbarLayout.setTitle(currentFood.getName()); //overwritten as per part 5 video instruction
+                food_price.setText(currentFood.getPrice()); //overwritten as per part 5 video instruction
+                food_name.setText(currentFood.getName()); //overwritten as per part 5 video instruction
+                food_description.setText(currentFood.getDescription()); //overwritten as per part 5 video instruction
             }
 
             @Override

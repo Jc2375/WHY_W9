@@ -11,7 +11,7 @@ public class Food {
         this.Image = Image;
         this.Description = Description;
         this.Price = Price;
-        //this.Discount = Discount;
+        this.Discount = "0.00"; //set to default 0.00. We can include set discount option in the future.
         this.MenuId = MenuId;
     }
 
@@ -47,13 +47,13 @@ public class Food {
         Price = Price;
     }
 
-  /*  public String getDiscount() {
+    public String getDiscount() { //uncommented. Plan to use discounts in future.
         return Discount;
     }
 
-    public void setDiscount(String discount) {
+    public void setDiscount(String discount) { //uncommented. Plan to use discounts in future.
         Discount = discount;
-    }*/
+    }
 
     public String getMenuId() {
         return MenuId;

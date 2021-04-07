@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
@@ -32,6 +33,13 @@ public class menu_home_canorder extends AppCompatActivity {
         setContentView(R.layout.menu_home_canorder);
         database= FirebaseDatabase.getInstance();
         category=database.getReference("Menu");
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener((view) -> {
+            Intent cartIntent = new Intent(menu_home_canorder.this,Cart.class);
+            startActivity(cartIntent);
+        });
+
         //LOAD MENU
         recycler_menu= (RecyclerView)findViewById(R.id.recycler_menu);
         recycler_menu.setHasFixedSize(true);

@@ -9,8 +9,57 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/recycler_menu"
-        android:scrollbars="vertical"
-        >
-
+        android:scrollbars="vertical">
     </androidx.recyclerview.widget.RecyclerView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:src="@drawable/why9logo"
+        android:backgroundTint="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        app:layout_anchor="@id/recycler_menu"
+        app:layout_anchorGravity="bottom|right|end"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        app:useCompatPadding="true"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <!--
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/main_content"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/ToDoList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ListView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:src="@drawable/why9logo"
+            android:backgroundTint="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="16dp"
+            app:layout_anchor="@id/ToDoList"
+            app:layout_anchorGravity="bottom|right|end"
+            app:elevation="6dp"
+            app:pressedTranslationZ="12dp"
+            app:useCompatPadding="true" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>>
+    -->
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+

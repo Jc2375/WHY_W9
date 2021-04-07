@@ -21,73 +21,96 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/BCardPayment"
+    <EditText
+        android:id="@+id/edtAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="220dp"
-        android:layout_marginEnd="173dp"
-        android:layout_marginBottom="36dp"
-        android:text="Debit/Credit Card"
-        app:layout_constraintBottom_toTopOf="@+id/BPaypalPaymeny"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="58dp"
+        android:layout_marginEnd="165dp"
+        android:layout_marginBottom="484dp"
+        android:hint="Enter Amount"
+        android:textColor="#07A5ED"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/BPaypalPaymeny"
+        android:id="@+id/BCardPayment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="304dp"
-        android:layout_marginBottom="379dp"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="208dp"
+        android:layout_marginEnd="172dp"
+        android:layout_marginBottom="358dp"
+        android:text="Debit/Credit Card"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.522" />
+
+    <Button
+        android:id="@+id/BPaypalPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="260dp"
+        android:layout_marginEnd="266dp"
+        android:layout_marginBottom="324dp"
+        android:onClick="onButtonClick"
         android:text="Paypal"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.343" />
 
     <Button
         android:id="@+id/BVenmoPayment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
-        android:layout_marginTop="373dp"
-        android:layout_marginBottom="310dp"
+        android:layout_marginTop="308dp"
+        android:layout_marginEnd="267dp"
+        android:layout_marginBottom="279dp"
         android:text="Venmo"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="312dp"
+        android:layout_width="394dp"
+        android:layout_height="232dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="365dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="6dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/online_payment_cartoon_flat_81534_1230" />
 
     <Button
         android:id="@+id/BCashPayment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="133dp"
-        android:layout_marginEnd="268dp"
-        android:layout_marginBottom="550dp"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="138dp"
+        android:layout_marginEnd="266dp"
+        android:layout_marginBottom="417dp"
         android:text="Cash "
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

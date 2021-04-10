@@ -45,6 +45,7 @@ public class OperationsInformation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_operations_information);
         root = FirebaseDatabase.getInstance();
+
         expenses = root.getReference("Expenses").child("2021");
         revenues = root.getReference("Revenues").child("2021");
         yearProfitAmount = findViewById(R.id.profitAmountTV);

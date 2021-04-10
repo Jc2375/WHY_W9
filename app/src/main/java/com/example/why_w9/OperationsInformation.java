@@ -4,13 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.net.ConnectivityManager;
 import android.os.Bundle;
-import android.telephony.mbms.StreamingServiceInfo;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.Description;
@@ -37,9 +35,10 @@ public class OperationsInformation extends AppCompatActivity {
     DatabaseReference revenues;
     ArrayList<Float> monthlyExpenses;
     ArrayList<Float> monthlyRevenues;
-    ArrayList<Float> monthlyProfits;
+    Float yearProfit;
     Button RC;
     Button Profits;
+    TextView yearProfitAmount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +47,10 @@ public class OperationsInformation extends AppCompatActivity {
         root = FirebaseDatabase.getInstance();
         expenses = root.getReference("Expenses").child("2021");
         revenues = root.getReference("Revenues").child("2021");
+        yearProfitAmount = findViewById(R.id.profitAmountTV);
         monthlyExpenses = new ArrayList<>();
         monthlyRevenues = new ArrayList<>();
-        monthlyProfits = new ArrayList<>();
+        yearProfit = Float.valueOf(0);
         infos = findViewById(R.id.operationBarChart);
         barEntryArrayList = new ArrayList<>();
         RC = findViewById(R.id.R_C_Btn);
@@ -106,10 +106,13 @@ public class OperationsInformation extends AppCompatActivity {
         //Log.d("val",monthlyExpenses.toString());
         //Log.d("val",monthlyRevenues.toString());
         barEntryArrayList.clear();
+        yearProfit = Float.valueOf(0);
         for (int i=0;i<monthlyRevenues.size();i++){
             float z = i;
             barEntryArrayList.add(new BarEntry(z,monthlyExpenses.get(i)*-1));
             barEntryArrayList.add(new BarEntry(z,monthlyRevenues.get(i)));
+            yearProfit +=monthlyRevenues.get(i);
+            yearProfit -=monthlyExpenses.get(i);
         }
         infos.getAxisRight().setEnabled(false);
         BarDataSet barDataSet = new BarDataSet(barEntryArrayList,"Revenues/Expeneses");
@@ -140,14 +143,18 @@ public class OperationsInformation extends AppCompatActivity {
         xAxis.setLabelRotationAngle(270);
         infos.animateY(1000);
         infos.invalidate();
+        yearProfitAmount.setText(yearProfit.toString());
 
     }
     public void showProfits(View v){
         barEntryArrayList.clear();
-        monthlyProfits.clear();
+        //monthlyProfits.clear();
+        yearProfit = Float.valueOf(0);
         for (int i=0;i<monthlyRevenues.size();i++){
             float z = i;
             barEntryArrayList.add(new BarEntry(z,monthlyRevenues.get(i)-monthlyExpenses.get(i)));
+            yearProfit -=monthlyExpenses.get(i);
+            yearProfit +=monthlyRevenues.get(i);
         }
         infos.getAxisRight().setEnabled(false);
         BarDataSet barDataSet = new BarDataSet(barEntryArrayList,"Profits");
@@ -175,6 +182,7 @@ public class OperationsInformation extends AppCompatActivity {
         xAxis.setLabelRotationAngle(270);
         infos.animateY(1000);
         infos.invalidate();
+        yearProfitAmount.setText(yearProfit.toString());
 
     }
 }

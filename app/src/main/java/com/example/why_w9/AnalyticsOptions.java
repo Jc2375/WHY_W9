@@ -18,7 +18,8 @@ public class AnalyticsOptions extends AppCompatActivity {
         startActivity(intent);
     }
     public void toFoodAnalytics(View v){
-
+        Intent intent = new Intent(this,FoodAnalytics.class);
+        startActivity(intent);
     }
     public void toRevenuesExpenses(View v){
         Intent intent = new Intent(this,OperationsInformation.class);

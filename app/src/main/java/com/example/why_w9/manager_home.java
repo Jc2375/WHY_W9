@@ -32,6 +32,10 @@ public class manager_home extends AppCompatActivity
             startActivity(i);
         }
     }
+    public void toAnalyticsOptions(View v){
+        Intent intent = new Intent(this,AnalyticsOptions.class);
+        startActivity(intent);
+    }
 
 
 

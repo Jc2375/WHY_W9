@@ -11,12 +11,15 @@
     <ExpandableListView
         android:id="@+id/exListView_bs"
         android:layout_width="match_parent"
-        android:layout_height="555dp"
-        android:layoutDirection="rtl"/>
+        android:layout_height="439dp"
+        android:layoutDirection="rtl" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="447dp">
+
 
         <Button
             android:id="@+id/backBtn_bs"
@@ -25,9 +28,76 @@
             android:onClick="backToSchedules"
             android:text="back"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/scheduleBtn_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="addShift"
+            android:text="Schedule"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextBusboyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Busboy Name"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/timeEnd_b"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/endTV_b"
+            app:layout_constraintStart_toEndOf="@+id/endTV_b" />
+
+        <Spinner
+            android:id="@+id/timeStart_b"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/startTV_b"
+            app:layout_constraintStart_toEndOf="@+id/startTV_b" />
+
+        <Spinner
+            android:id="@+id/dayOption_b"
+            android:layout_width="150dp"
+            android:layout_height="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/dayTV_b"
+            app:layout_constraintStart_toEndOf="@+id/dayTV_b" />
+
+        <TextView
+            android:id="@+id/startTV_b"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Start Time:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dayTV_b" />
+
+        <TextView
+            android:id="@+id/endTV_b"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            android:text="End Time"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/startTV_b" />
+
+        <TextView
+            android:id="@+id/dayTV_b"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Day"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextBusboyName" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

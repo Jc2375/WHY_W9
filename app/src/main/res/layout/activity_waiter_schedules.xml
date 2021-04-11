@@ -7,11 +7,12 @@
     android:orientation="vertical"
     android:padding="8dp"
     tools:context=".WaiterSchedules">
+
     <ExpandableListView
         android:id="@+id/exListView_ws"
         android:layout_width="match_parent"
-        android:layout_height="555dp"
-        android:layoutDirection="rtl"/>
+        android:layout_height="439dp"
+        android:layoutDirection="rtl" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -24,9 +25,73 @@
             android:onClick="backToSchedules"
             android:text="back"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/ScheduleBtn_w"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="addShift"
+            android:text="Schedule"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+        <EditText
+            android:id="@+id/editTextWaiterName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Waiter Name"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+            android:id="@+id/dayTV_w"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Day "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextWaiterName" />
+
+        <TextView
+            android:id="@+id/startTV_w"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="Start Time"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dayTV_w" />
+
+        <TextView
+            android:id="@+id/endTV_w"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            android:text="End Time"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/startTV_w" />
+
+        <Spinner
+            android:id="@+id/dayOption_w"
+            android:layout_width="150dp"
+            android:layout_height="20dp"
+
+            app:layout_constraintBottom_toBottomOf="@+id/dayTV_w"
+            app:layout_constraintStart_toEndOf="@+id/dayTV_w" />
+
+        <Spinner
+            android:id="@+id/timeStart_w"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/startTV_w"
+            app:layout_constraintStart_toEndOf="@+id/startTV_w" />
+
+        <Spinner
+            android:id="@+id/timeEnd_w"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/endTV_w"
+            app:layout_constraintStart_toEndOf="@+id/endTV_w" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

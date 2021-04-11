@@ -65,4 +65,6 @@ dependencies {
     implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
     //implementation 'com.android.support:design:26.+'
     //implementation 'com.google.firebase:firebase-messaging:10.2.1'
+
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 }

@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void onButtonClick(View v)
     {
+
         if(v.getId()== R.id.Blogin)
         {
             Intent i=new Intent(MainActivity.this, login.class );
@@ -22,7 +23,11 @@ public class MainActivity extends AppCompatActivity {
         if(v.getId()== R.id.Bregister)
         {
             Intent i=new Intent(MainActivity.this, register.class );
+            Bundle bundle=new Bundle();
+            bundle.putBoolean("Manager_Check",false);
+            i.putExtras(bundle);
             startActivity(i);
+
         }
     }
 

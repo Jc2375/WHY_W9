@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -21,14 +22,31 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class register extends AppCompatActivity
 {
-    EditText mEmail, mPassword;
+
+    EditText mEmail, mPassword, mUsertype;
+    TextView text10;
     Button mRegisterBtn;
     FirebaseAuth fAuth;
+    boolean Manager_check;
+    String typeofuser;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register);
+
+        Bundle bundle= getIntent().getExtras();
+        Manager_check=bundle.getBoolean("Manager_Check");
+
+        if(Manager_check == true){
+            mUsertype = findViewById(R.id.mUsertype);
+            text10 = findViewById(R.id.textView10);
+            text10.setVisibility(View.VISIBLE);
+            mUsertype.setVisibility(View.VISIBLE);
+
+        }
+
 
         mEmail = findViewById(R.id.mEmail);
         mPassword = findViewById(R.id.mPassword);
@@ -44,8 +62,16 @@ public class register extends AppCompatActivity
     }
     public void onButtonClick(View v)
     {
+
+
         String email = mEmail.getText().toString().trim();
         String password = mPassword.getText().toString().trim();
+
+        if(Manager_check == true)
+        {
+            typeofuser = mUsertype.getText().toString().trim();
+        }
+
 
         if(TextUtils.isEmpty(email))
         {
@@ -67,10 +93,37 @@ public class register extends AppCompatActivity
           fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
               @Override
               public void onComplete(@NonNull Task<AuthResult> task) {
+
+
                   if(task.isSuccessful())
                   {
-                      Toast.makeText(register.this, "User Created", Toast.LENGTH_SHORT).show();
-                      startActivity(new Intent(getApplicationContext(), customer_home.class));
+                      if(Manager_check == true)
+                      {
+                          Toast.makeText(register.this, "User Created", Toast.LENGTH_SHORT).show();
+                          String uid= FirebaseAuth.getInstance().getCurrentUser().getUid();
+                          User_Parameters userParameters;
+                          DatabaseReference reff;
+                          reff = FirebaseDatabase.getInstance().getReference().child("User");
+                          userParameters = new User_Parameters();
+                          userParameters.setUser_type(typeofuser);
+                          userParameters.setEmail(email);
+                          userParameters.setPassword(password);
+                          reff.child(uid).setValue(userParameters);
+                      }
+                      else {
+                          Toast.makeText(register.this, "User Created", Toast.LENGTH_SHORT).show();
+                          String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                          User_Parameters userParameters;
+                          DatabaseReference reff;
+                          reff = FirebaseDatabase.getInstance().getReference().child("User");
+                          userParameters = new User_Parameters();
+                          userParameters.setUser_type("Customer");
+                          userParameters.setEmail(email);
+                          userParameters.setPassword(password);
+                          reff.child(uid).setValue(userParameters);
+
+                          startActivity(new Intent(getApplicationContext(), customer_home.class));
+                      }
                   }
                   else {
                         Toast.makeText(register.this, "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();

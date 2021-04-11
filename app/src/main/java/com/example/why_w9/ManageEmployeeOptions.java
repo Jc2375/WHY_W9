@@ -23,5 +23,14 @@ public class ManageEmployeeOptions extends AppCompatActivity {
     public void toEmployeeSchedules(View v){
         Intent intent = new Intent(this,EmployeeSchedules.class);
         startActivity(intent);
+
+
+    }
+    public void toEmployeeRegistration(View v) {
+        Bundle bundle=new Bundle();
+        bundle.putBoolean("Manager_Check",true);
+        Intent intent = new Intent(this, register.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 }

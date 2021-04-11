@@ -68,7 +68,10 @@ public class CartAdapter extends RecyclerView.Adapter<CartViewHolder> {
 
         Locale locale = new Locale("en", "US");
         NumberFormat fmt = NumberFormat.getCurrencyInstance(locale);
-        int price = (Integer.parseInt(listData.get(position).getPrice()))*(Integer.parseInt(listData.get(position).getQuantity()));
+        //fixed price problem here and in Cart.java
+        //previous lines commented out
+        //int price = (Integer.parseInt(listData.get(position).getPrice()))*(Integer.parseInt(listData.get(position).getQuantity()));
+        float price = (Float.parseFloat(listData.get(position).getPrice()))*(Float.parseFloat(listData.get(position).getQuantity()));
         holder.txt_price.setText(fmt.format(price));
 
         holder.txt_cart_name.setText(listData.get(position).getProductName());

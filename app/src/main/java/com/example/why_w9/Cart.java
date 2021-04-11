@@ -138,13 +138,17 @@ public class Cart extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         //Calculate total price
-        int total = 0;
+        //fixed price problem here and in CartAdapter.java
+        //previous lines commented out
+        //int total = 0;
+        float total = 0;
         for(Order order:cart)
-            total+=(Integer.parseInt(order.getPrice()))*(Integer.parseInt(order.getQuantity()));
+            //total+=(Integer.parseInt(order.getPrice()))*(Integer.parseInt(order.getQuantity()));
+            total+=(Float.parseFloat(order.getPrice()))*(Float.parseFloat(order.getQuantity()));
         Locale locale = new Locale("en", "US");
         NumberFormat fmt = NumberFormat.getCurrencyInstance(locale);
 
-        txtTotalPrice.setText(fmt.format(total));
-
+        //txtTotalPrice.setText(fmt.format(total));
+        txtTotalPrice.setText(String.valueOf(total));
     }
 }

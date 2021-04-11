@@ -30,6 +30,7 @@ public class manager_home extends AppCompatActivity
         if (v.getId() == R.id.BManageEmp) {
             Intent i = new Intent(manager_home.this, ManageEmployeeOptions.class);
             startActivity(i);
+
         }
     }
 

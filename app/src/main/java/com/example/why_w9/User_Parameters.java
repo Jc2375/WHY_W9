@@ -1,10 +1,11 @@
 package com.example.why_w9;
 
-public class Customers {
+public class User_Parameters {
 
-    private String Email, Name, Address, Password, City, State, Zipcode, User_type;
+    private String Email, Name, Address, Password, City, State, Zipcode;
+    private String User_type;
 
-    public Customers() {
+    public User_Parameters() {
 
     }
 
@@ -64,6 +65,8 @@ public class Customers {
         Zipcode = zipcode;
     }
 
+    public String getUser_type() { return User_type;}
+    public void setUser_type(String user_type) {User_type = user_type; }
 
 
 }

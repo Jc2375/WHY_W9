@@ -13,12 +13,13 @@ import com.google.firebase.auth.FirebaseUser;
 public class customer_home extends AppCompatActivity
 {
     private FirebaseAuth mFirebaseAuth; //logout part 3
-
+    String uid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.customer_home);
-
+        Bundle bundle = getIntent().getExtras();
+        uid = bundle.getString("uid");
         mFirebaseAuth = FirebaseAuth.getInstance(); //logout part 4
     }
 
@@ -50,6 +51,7 @@ public class customer_home extends AppCompatActivity
             Toast.makeText(customer_home.this, "View Menu", Toast.LENGTH_SHORT).show();
             Bundle bundle=new Bundle();
             bundle.putString("usertype","customer");
+            bundle.putString("uid",uid);
             Intent i = new Intent(customer_home.this, menu_home_canorder.class);
             i.putExtras(bundle);
             startActivity(i);

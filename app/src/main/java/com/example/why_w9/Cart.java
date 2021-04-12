@@ -42,12 +42,14 @@ public class Cart extends AppCompatActivity {
     List<Order> cart = new ArrayList<>();
 
     CartAdapter adapter;
-    String uid="kax7PBMjUEaw20gG1cR7XddG2NT2";
+    String uid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
+        Bundle bundle = getIntent().getExtras();
 
+        uid= bundle.getString("uid");
         //Firebase
         database = FirebaseDatabase.getInstance();
         requests=database.getReference("Requests");

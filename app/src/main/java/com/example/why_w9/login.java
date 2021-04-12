@@ -3,7 +3,6 @@ package com.example.why_w9;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -123,30 +122,44 @@ public class login extends AppCompatActivity {
                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                           String Usertype = dataSnapshot.child("user_type").getValue().toString();
                                             Toast.makeText(getApplicationContext(),Usertype+"", Toast.LENGTH_LONG).show();
-
+                                            Bundle bundle=new Bundle();
+                                            bundle.putString("uid",uid);
                                             if(Usertype.equals("Customer")) {
 
-                                                startActivity(new Intent(getApplicationContext(), customer_home.class));
+
+                                                Intent intent = new Intent(getApplicationContext(), customer_home.class);
+                                                intent.putExtras(bundle);
+                                                startActivity(intent);
                                             }
                                            else if(Usertype.equals("Waiter")) {
 
-                                                startActivity(new Intent(getApplicationContext(), waiter_home.class));
+                                                Intent intent = new Intent(getApplicationContext(), waiter_home.class);
+                                                intent.putExtras(bundle);
+                                                startActivity(intent);
                                             }
                                             else if(Usertype.equals("Driver")) {
 
-                                                startActivity(new Intent(getApplicationContext(), driver_home.class));
+                                                Intent intent = new Intent(getApplicationContext(), driver_home.class);
+                                                intent.putExtras(bundle);
+                                                startActivity(intent);
                                             }
                                             else if(Usertype.equals("Busboy"))
                                             {
-                                                startActivity(new Intent(getApplicationContext(), busboy_home.class));
+                                                Intent intent = new Intent(getApplicationContext(),busboy_home.class);
+                                                intent.putExtras(bundle);
+                                                startActivity(intent);
                                             }
                                             else if(Usertype.equals("Host"))
                                             {
-                                                startActivity(new Intent(getApplicationContext(), host_home.class));
+                                                Intent intent = new Intent(getApplicationContext(), host_home.class);
+                                                intent.putExtras(bundle);
+                                                startActivity(intent);
                                             }
                                             else if(Usertype.equals("Chef"))
                                             {
-                                                startActivity(new Intent(getApplicationContext(), chef_home.class));
+                                                Intent intent = new Intent(getApplicationContext(), chef_home.class);
+                                                intent.putExtras(bundle);
+                                                startActivity(intent);
                                             }
 
                                         }

@@ -33,11 +33,17 @@ public class menu_home_canorder extends AppCompatActivity {
         setContentView(R.layout.menu_home_canorder);
         database= FirebaseDatabase.getInstance();
         category=database.getReference("Menu");
+        Bundle bundle = getIntent().getExtras();
+        String user = bundle.getString("usertype");
+        String uid= bundle.getString("uid");
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener((view) -> {
-            Intent cartIntent = new Intent(menu_home_canorder.this,Cart.class);
-            startActivity(cartIntent);
+            Bundle bundle1=new Bundle();
+            bundle1.putString("uid",uid);
+            Intent i = new Intent(menu_home_canorder.this, Cart.class);
+            i.putExtras(bundle1);
+            startActivity(i);
         });
 
         //LOAD MENU
@@ -45,8 +51,7 @@ public class menu_home_canorder extends AppCompatActivity {
         recycler_menu.setHasFixedSize(true);
         layoutManager= new LinearLayoutManager(this);
         recycler_menu.setLayoutManager(layoutManager);
-        Bundle bundle = getIntent().getExtras();
-        String user = bundle.getString("usertype");
+
         loadMenu();
     }
     private void loadMenu()

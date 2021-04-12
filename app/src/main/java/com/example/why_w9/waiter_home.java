@@ -9,10 +9,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class waiter_home extends AppCompatActivity
 {
+    String uid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.waiter_home);
+        Bundle bundle = getIntent().getExtras();
+        uid = bundle.getString("uid");
     }
     public void onButtonClick(View v)
     {
@@ -21,6 +24,7 @@ public class waiter_home extends AppCompatActivity
             Toast.makeText(waiter_home.this, "User Signed Out Successfully", Toast.LENGTH_SHORT).show();
             Bundle bundle=new Bundle();
             bundle.putString("usertype","waiter");
+            bundle.putString("uid",uid);
             Intent i = new Intent(waiter_home.this, menu_home_canorder.class);
             i.putExtras(bundle);
             startActivity(i);

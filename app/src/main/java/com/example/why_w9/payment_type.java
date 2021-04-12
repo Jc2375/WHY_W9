@@ -16,15 +16,14 @@ import com.paypal.android.sdk.payments.PayPalPayment;
 import com.paypal.android.sdk.payments.PayPalService;
 import com.paypal.android.sdk.payments.PaymentActivity;
 import com.paypal.android.sdk.payments.PaymentConfirmation;
-
 import org.json.JSONException;
-
 import java.math.BigDecimal;
 
 
 public class payment_type extends AppCompatActivity {
 
-    private static final int PAYPAL_REQUEST_CODE = 7171;
+    public static final int PAYPAL_REQUEST_CODE = 7171;
+
     private static PayPalConfiguration config = new PayPalConfiguration()
             .environment(PayPalConfiguration.ENVIRONMENT_SANDBOX)
             .clientId(Config.PAYPAL_CLIENT_ID);
@@ -33,6 +32,7 @@ public class payment_type extends AppCompatActivity {
     EditText edtAmout;
 
     String amount = "";
+
     @Override
     protected void onDestroy()
     {
@@ -44,16 +44,6 @@ public class payment_type extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-        Intent intent = new Intent(this,PayPalService.class);
-        intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, config);
-        startService(intent);
-
-
-        BPaypalPayment = (Button)findViewById(R.id.BPaypalPayment);
-        edtAmout = (EditText)findViewById(R.id.edtAmount);
-        //add amount here
 
         Bundle bundle= getIntent().getExtras();
         boolean deliv=bundle.getBoolean("Delivery");
@@ -68,6 +58,18 @@ public class payment_type extends AppCompatActivity {
         {
             setContentView(R.layout.payment_type);
         }
+
+        Intent intent = new Intent(this,PayPalService.class);
+        intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, config);
+        startService(intent);
+
+
+        BPaypalPayment = (Button)findViewById(R.id.BPaypalPayment);
+        edtAmout = (EditText)findViewById(R.id.edtAmount);
+        //add amount here
+
+
+
     }
 
     public void onButtonClick(View v) {

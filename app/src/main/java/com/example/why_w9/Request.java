@@ -8,6 +8,7 @@ public class Request {
     private String address;
     private String total;
     private List<Order> foods; // list of food order
+    private String uid;
 
     public Request() {
     }
@@ -16,6 +17,12 @@ public class Request {
         this.phone = phone;
         this.name = name;
         this.address = address;
+        this.total = total;
+        this.foods = foods;
+    }
+    public Request(String uid,String total, List<Order> foods)
+    {
+        this.uid=uid;
         this.total = total;
         this.foods = foods;
     }
@@ -42,6 +49,12 @@ public class Request {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+    public String getUid() {
+        return uid;
+    }
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
     public String getTotal() {

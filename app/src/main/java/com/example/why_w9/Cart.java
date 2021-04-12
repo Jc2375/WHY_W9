@@ -1,39 +1,32 @@
 package com.example.why_w9;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.app.Dialog;
+import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.DatabaseReference;
-
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import info.hoang8f.widget.FButton;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.NumberFormat;
-import java.util.List;
 import java.util.ArrayList;
-
+import java.util.List;
 import java.util.Locale;
 
-import Database.*;
+import Database.Database;
 
-import android.app.AlertDialog;
-import android.widget.EditText;
 //import com.google.android.gms.common.internal.service.Common;
 //import com.google.firebase.*;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class Cart extends AppCompatActivity {
 
@@ -49,7 +42,7 @@ public class Cart extends AppCompatActivity {
     List<Order> cart = new ArrayList<>();
 
     CartAdapter adapter;
-
+    String uid="kax7PBMjUEaw20gG1cR7XddG2NT2";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,7 +65,13 @@ public class Cart extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                showAlertDialog();
+
+                Toast.makeText(Cart.this, "Your order has been submitted.", Toast.LENGTH_SHORT).show();
+                Request request = new Request (uid,txtTotalPrice.getText().toString(), cart);
+                requests.child(String.valueOf(System.currentTimeMillis())).setValue(request);
+                new Database(getBaseContext()).cleanCart();
+                Intent i = new Intent(Cart.this, order_type.class);
+                startActivity(i);
             }
         });
 

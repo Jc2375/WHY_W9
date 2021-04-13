@@ -46,6 +46,7 @@
         android:layout_marginTop="115dp"
         android:layout_marginEnd="231dp"
         android:layout_marginBottom="568dp"
+        android:onClick="onButtonClick"
         android:text="Clock In/out"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -42,6 +42,7 @@
         <activity android:name=".chef_home" />
         <activity android:name=".host_home" />
         <activity android:name=".menu_home_canorder" />
+        <activity android:name=".menu_home_canorder3" />
         <activity android:name=".modify_account" />
         <activity android:name=".payment_type" />
         <activity android:name=".PaymentDetails" />
@@ -54,6 +55,7 @@
         <activity android:name=".busboy_home" />
         <activity android:name=".FoodList" />
         <activity android:name=".food_detail" />
+        <activity android:name=".clockinout" />
     </application>
 
 </manifest>

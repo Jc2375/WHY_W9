@@ -8,6 +8,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class chef_home extends AppCompatActivity {
     Button b;
     Button c;
@@ -28,6 +31,19 @@ public class chef_home extends AppCompatActivity {
             Bundle bundle=new Bundle();
             bundle.putString("usertype","chef");
             Intent i = new Intent(chef_home.this, menu_home_canorder3.class);
+            i.putExtras(bundle);
+            startActivity(i);
+        }
+        if(v.getId() == R.id.BChefClocking){
+            //Get uid from database
+            FirebaseDatabase db = FirebaseDatabase.getInstance();
+            String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+            //Creating bundle to pass along info of uid and usertype to clock in page
+            Bundle bundle = new Bundle();
+            bundle.putString("usertype","chef");
+            bundle.putString("uid",uid);
+            Intent i = new Intent(chef_home.this, clockinout.class);
             i.putExtras(bundle);
             startActivity(i);
         }

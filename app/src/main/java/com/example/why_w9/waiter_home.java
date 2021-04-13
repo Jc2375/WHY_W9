@@ -16,6 +16,9 @@ public class waiter_home extends AppCompatActivity
         setContentView(R.layout.waiter_home);
         Bundle bundle = getIntent().getExtras();
         uid = bundle.getString("uid");
+
+
+
     }
     public void onButtonClick(View v)
     {
@@ -34,6 +37,15 @@ public class waiter_home extends AppCompatActivity
             Intent i = new Intent(waiter_home.this, MainActivity.class);
             startActivity(i);
         }
+        if (v.getId() == R.id.BWaiterClocking){
+            Bundle bundle = new Bundle();
+            bundle.putString("usertype","waiter");
+            bundle.putString("uid",uid);
+            Intent i = new Intent(waiter_home.this, clockinout.class);
+            i.putExtras(bundle);
+            startActivity(i);
+        }
+
 
     }
 

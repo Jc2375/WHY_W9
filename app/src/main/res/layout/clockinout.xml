@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/clockinTime"
+        android:layout_width="310dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="98dp"
+        android:layout_marginBottom="612dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/BclockIn"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="190dp"
+        android:layout_height="97dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="105dp"
+        android:layout_marginEnd="110dp"
+        android:layout_marginBottom="75dp"
+        android:onClick="onButtonClick"
+        android:text="Clock In"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/BclockOut"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clockinTime" />
+
+    <Button
+        android:id="@+id/BclockOut"
+        android:layout_width="183dp"
+        android:layout_height="95dp"
+        android:layout_marginStart="115dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="114dp"
+        android:layout_marginBottom="151dp"
+        android:onClick="onButtonClick"
+        android:text="Clock Out"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BclockIn" />
+
+    <Button
+        android:id="@+id/BsendBack"
+        android:layout_width="99dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:onClick="onButtonClick"
+        android:text="Back to home"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

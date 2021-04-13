@@ -32,10 +32,12 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 public class clockinout extends AppCompatActivity {
 
+    private FirebaseAuth auth;
 
 
     @Override
@@ -48,14 +50,53 @@ public class clockinout extends AppCompatActivity {
         String uid = bundle.getString("uid");
 
 
-
     }
 
     //Shows current date & time at top of page
     public void showDateTime(){
         TextView timeText = (TextView)findViewById(R.id.clockinTime);
-        String currentTimeString = new SimpleDateFormat("MM/dd/yy hh:mm a").format(new Date());
-        timeText.setText(currentTimeString);
+        String currentTimeString = new SimpleDateFormat("MM/dd/yy"+" hh:mm a").format(new Date());
+        timeText.setText("The current time is: "+currentTimeString);
+    }
+
+    //Get date
+    public String getDate(){
+        String currDate = new SimpleDateFormat("MM_dd").format(new Date());
+        return currDate;
+    }
+    //Get time
+    public String getTime(){
+        String currTime = new SimpleDateFormat("HH:mm:ss").format(new Date());
+        return currTime;
+    }
+    //Get year
+    public String getYear(){
+        String currYear = new SimpleDateFormat("yyyy").format(new Date());
+        return currYear;
+    }
+
+    public void clockIn(){
+        auth = FirebaseAuth.getInstance();
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        String userid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DatabaseReference reff = db.getReference().child("User").child(userid).child("Year").child(getYear()).child(getDate());
+
+        HashMap<String, Object> map = new HashMap<>();
+        map.put(getTime(), "Clocked in");
+
+        reff.updateChildren(map);
+    }
+
+    public void clockOut(String date, String time){
+        auth = FirebaseAuth.getInstance();
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        String userid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DatabaseReference reff = db.getReference().child("User").child(userid).child("Year").child(getYear()).child(getDate());
+
+        HashMap<String, Object> map = new HashMap<>();
+        map.put(getTime(),"Clocked out");
+
+        reff.updateChildren(map);
     }
 
     //Once button is clicked:
@@ -69,6 +110,11 @@ public class clockinout extends AppCompatActivity {
             Button button = (Button)findViewById(R.id.BclockIn);
             button.setTextSize(18);
             button.setText("Successfully clocked in at "+currTimeString);
+
+            //retrieving and adding to database
+            clockIn();
+
+            //Switches text back to original
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 public void run() {
@@ -85,6 +131,11 @@ public class clockinout extends AppCompatActivity {
             Button button = (Button)findViewById(R.id.BclockOut);
             button.setTextSize(18);
             button.setText("Successfully clocked out at "+currTimeString);
+
+            //retrieving and adding to database
+            clockOut(getDate(),currTimeString);
+
+            //Switches text back to original
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 public void run() {
@@ -106,7 +157,8 @@ public class clockinout extends AppCompatActivity {
                     String usertype = snapshot.getValue().toString();
                     //Waiter check
                     if(usertype.toLowerCase().equals("waiter")){
-                        System.out.println("success");
+
+                        //Creating intent and transferring uid and usertype back to waiter home
                         Intent i = new Intent(clockinout.this, waiter_home.class);
                         Bundle bundle = new Bundle();
                         bundle.putString("usertype","waiter");
@@ -116,7 +168,9 @@ public class clockinout extends AppCompatActivity {
                     }
                     //Busboy check
                     if(usertype.toLowerCase().equals("busboy")){
-                        System.out.println("success");
+
+
+                        //Creating intent and transferring uid and usertype back to busboy home
                         Intent i = new Intent(clockinout.this, busboy_home.class);
                         Bundle bundle = new Bundle();
                         bundle.putString("usertype","busboy");
@@ -126,7 +180,9 @@ public class clockinout extends AppCompatActivity {
                     }
                     //Chef check
                     if(usertype.toLowerCase().equals("chef")){
-                        System.out.println("success");
+
+
+                        //Creating intent and transferring uid and usertype back to chef home
                         Intent i = new Intent(clockinout.this, chef_home.class);
                         Bundle bundle = new Bundle();
                         bundle.putString("usertype","chef");

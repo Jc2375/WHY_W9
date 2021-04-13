@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="54dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="54dp"
         android:layout_marginBottom="646dp"
         android:text="Host Home Page"
@@ -25,58 +25,56 @@
         android:id="@+id/BHostClocking"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="53dp"
-        android:layout_marginTop="114dp"
-        android:layout_marginEnd="218dp"
-        android:layout_marginBottom="569dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="236dp"
+        android:layout_marginBottom="484dp"
+        android:onClick="onButtonClick"
         android:text="Clock In/out"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/BOrdersListHost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="239dp"
-        android:layout_marginTop="114dp"
-        android:layout_marginEnd="43dp"
-        android:layout_marginBottom="569dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="484dp"
         android:text="Orders List"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/BTableStatusHost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="53dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="217dp"
-        android:layout_marginBottom="483dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="236dp"
+        android:layout_marginBottom="420dp"
         android:text="Table Status"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/BHostClocking" />
 
     <Button
         android:id="@+id/BMenuHost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="239dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="54dp"
-        android:layout_marginBottom="483dp"
+        android:layout_marginBottom="420dp"
         android:onClick="onButtonClick"
         android:text="View Menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/BOrdersListHost" />
 
     <ImageView
         android:id="@+id/imageView5"

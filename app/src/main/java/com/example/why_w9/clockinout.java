@@ -190,6 +190,18 @@ public class clockinout extends AppCompatActivity {
                         i.putExtras(bundle);
                         startActivity(i);
                     }
+                    //Host check
+                    if(usertype.toLowerCase().equals("host")){
+
+
+                        //Creating intent and transferring uid and usertype back to chef home
+                        Intent i = new Intent(clockinout.this, host_home.class);
+                        Bundle bundle = new Bundle();
+                        bundle.putString("usertype","host");
+                        bundle.putString("uid",userid);
+                        i.putExtras(bundle);
+                        startActivity(i);
+                    }
                 }
 
                 @Override

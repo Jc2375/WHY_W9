@@ -27,6 +27,8 @@
         <item>8pm</item>
         <item>9pm</item>
         <item>10pm</item>
+        <item>-</item>
+
     </string-array>
 
     <string-array name="months">

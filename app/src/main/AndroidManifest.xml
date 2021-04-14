@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WHY_W9"
         tools:replace="android:theme">
-        <activity android:name=".FoodAnalytics"></activity>
+        <activity android:name=".HostSchedules"></activity>
+        <activity android:name=".FoodAnalytics" />
         <activity android:name=".OperationsInformation" />
         <activity android:name=".DailyTraffic" />
         <activity android:name=".AnalyticsOptions" />

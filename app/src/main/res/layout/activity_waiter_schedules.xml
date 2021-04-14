@@ -8,11 +8,12 @@
     android:padding="8dp"
     tools:context=".WaiterSchedules">
 
-    <ExpandableListView
-        android:id="@+id/exListView_ws"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/waiterRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="439dp"
-        android:layoutDirection="rtl" />
+        android:layout_height="440dp"
+        tools:layout_editor_absoluteX="229dp"
+        tools:layout_editor_absoluteY="391dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -35,15 +36,7 @@
             android:text="Schedule"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
-        <EditText
-            android:id="@+id/editTextWaiterName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Waiter Name"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+
         <TextView
             android:id="@+id/dayTV_w"
             android:layout_width="wrap_content"
@@ -51,7 +44,7 @@
             android:layout_marginTop="20dp"
             android:text="Day "
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextWaiterName" />
+            app:layout_constraintTop_toBottomOf="@+id/nameTV_w" />
 
         <TextView
             android:id="@+id/startTV_w"
@@ -92,6 +85,24 @@
             android:layout_height="20dp"
             app:layout_constraintBottom_toBottomOf="@+id/endTV_w"
             app:layout_constraintStart_toEndOf="@+id/endTV_w" />
+
+        <Spinner
+            android:id="@+id/nameSpinner_w"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toEndOf="@+id/nameTV_w"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/nameTV_w"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginTop="5dp"
+            android:text="Name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </LinearLayout>

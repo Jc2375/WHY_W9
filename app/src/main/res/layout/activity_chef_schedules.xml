@@ -4,22 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clickable="false"
     android:orientation="vertical"
     android:padding="8dp"
     tools:context=".ChefSchedules">
 
-    <ExpandableListView
-        android:id="@+id/exListView_cs"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chefRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="439dp"
-        android:layoutDirection="rtl" />
+        android:layout_height="440dp"
+        tools:layout_editor_absoluteX="229dp"
+        tools:layout_editor_absoluteY="391dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="447dp">
+        android:layout_height="match_parent">
 
         <Button
             android:id="@+id/backBtn_cs"
@@ -31,7 +29,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/scheduleEmployeeBtn"
+            android:id="@+id/ScheduleBtn_c"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="addShift"
@@ -39,67 +37,71 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <EditText
-            android:id="@+id/editTextChefName"
+        <TextView
+            android:id="@+id/dayTV_c"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Chef Name"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Day "
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/nameTV_c" />
+
+        <TextView
+            android:id="@+id/startTV_c"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="Start Time"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dayTV_c" />
+
+        <TextView
+            android:id="@+id/endTV_c"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            android:text="End Time"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/startTV_c" />
 
         <Spinner
-            android:id="@+id/dayOptionSpinner"
+            android:id="@+id/dayOption_c"
             android:layout_width="150dp"
             android:layout_height="20dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintStart_toEndOf="@+id/textViewDay_c"
-            app:layout_constraintTop_toBottomOf="@+id/editTextChefName" />
+
+            app:layout_constraintBottom_toBottomOf="@+id/dayTV_c"
+            app:layout_constraintStart_toEndOf="@+id/dayTV_c" />
 
         <Spinner
-            android:id="@+id/timeSpinnerStart"
+            android:id="@+id/timeStart_c"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintStart_toEndOf="@+id/textViewStart_c"
-            app:layout_constraintTop_toBottomOf="@+id/dayOptionSpinner" />
+            app:layout_constraintBottom_toBottomOf="@+id/startTV_c"
+            app:layout_constraintStart_toEndOf="@+id/startTV_c" />
 
         <Spinner
-            android:id="@+id/timeSpinnerEnd"
+            android:id="@+id/timeEnd_c"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintStart_toEndOf="@+id/textViewEnd_c"
-            app:layout_constraintTop_toBottomOf="@+id/timeSpinnerStart" />
+            app:layout_constraintBottom_toBottomOf="@+id/endTV_c"
+            app:layout_constraintStart_toEndOf="@+id/endTV_c" />
+
+        <Spinner
+            android:id="@+id/nameSpinner_c"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toEndOf="@+id/nameTV_c"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textViewStart_c"
-            android:layout_width="100dp"
+            android:id="@+id/nameTV_c"
+            android:layout_width="wrap_content"
             android:layout_height="20dp"
-            android:layout_marginTop="20dp"
-            android:text="Start Time:"
+            android:layout_marginTop="5dp"
+            android:text="Name"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewDay_c" />
-
-        <TextView
-            android:id="@+id/textViewEnd_c"
-            android:layout_width="100dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="20dp"
-            android:text="End Time:"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewStart_c" />
-
-        <TextView
-            android:id="@+id/textViewDay_c"
-            android:layout_width="100dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="20dp"
-            android:text="Day:"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextChefName" />
-
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

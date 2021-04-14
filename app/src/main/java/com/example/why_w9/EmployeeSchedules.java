@@ -42,6 +42,10 @@ public class EmployeeSchedules extends AppCompatActivity {
         Intent intent = new Intent (this,manager_home.class);
         startActivity(intent);
     }
+    public void toHostSchedules(View v){
+        Intent intent = new Intent(this,HostSchedules.class);
+        startActivity(intent);
+    }
 
 
 

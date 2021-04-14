@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class BusboySchedules extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class HostSchedules extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     FirebaseDatabase root;
     DatabaseReference ref;
@@ -35,7 +35,7 @@ public class BusboySchedules extends AppCompatActivity implements AdapterView.On
     String dayField;
     String startTimeField;
     String endTimeField;
-    String busboyName;
+    String hostName;
 
     Spinner daySpinner;
     Spinner timeStartSpinner;
@@ -43,27 +43,27 @@ public class BusboySchedules extends AppCompatActivity implements AdapterView.On
     Spinner nameSpinner;
     Button schedule;
 
-    ArrayList<String> busboyNames;
+    ArrayList<String> hostNames;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_busboy_schedules);
-        schedule = findViewById(R.id.ScheduleBtn_b);
+        setContentView(R.layout.activity_host_schedules);
+        schedule = findViewById(R.id.ScheduleBtn_h);
         schedule.setEnabled(false);
 
-        recyclerView = findViewById(R.id.busboyRecyclerView);
+        recyclerView = findViewById(R.id.hostRecyclerView);
         recyclerView.hasFixedSize();
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         root = FirebaseDatabase.getInstance();
-        ref = root.getReference("Schedules").child("Busboys");
+        ref = root.getReference("Schedules").child("Hosts");
 
-        daySpinner = findViewById(R.id.dayOption_b);
-        timeStartSpinner = findViewById(R.id.timeStart_b);
-        timeEndSpinner = findViewById(R.id.timeEnd_b);
-        nameSpinner  = findViewById(R.id.nameSpinner_b);
+        daySpinner = findViewById(R.id.dayOption_h);
+        timeStartSpinner = findViewById(R.id.timeStart_h);
+        timeEndSpinner = findViewById(R.id.timeEnd_h);
+        nameSpinner  = findViewById(R.id.nameSpinner_h);
         nameSpinner.setEnabled(false);
-        busboyNames = new ArrayList<>();
+        hostNames = new ArrayList<>();
 
         list = new ArrayList<>();
         adapter = new ScheduleRecAdapter(this,list);
@@ -74,7 +74,7 @@ public class BusboySchedules extends AppCompatActivity implements AdapterView.On
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot snapshot1: snapshot.getChildren()){
                     ScheduleModel model = snapshot1.getValue(ScheduleModel.class);
-                    busboyNames.add(model.name);
+                    hostNames.add(model.name);
                     list.add(model);
                 }
                 adapter.notifyDataSetChanged();
@@ -90,19 +90,19 @@ public class BusboySchedules extends AppCompatActivity implements AdapterView.On
             }
         });
 
-        Spinner daySpinner = findViewById(R.id.dayOption_b);
+        Spinner daySpinner = findViewById(R.id.dayOption_h);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.dayOption, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         daySpinner.setAdapter(adapter);
         daySpinner.setOnItemSelectedListener(this);
 
-        Spinner timesSpinner = findViewById(R.id.timeStart_b);
+        Spinner timesSpinner = findViewById(R.id.timeStart_h);
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,R.array.timeOptions, android.R.layout.simple_spinner_item);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         timesSpinner.setAdapter(adapter2);
         timesSpinner.setOnItemSelectedListener(this);
 
-        Spinner timesSpinner2 = findViewById(R.id.timeEnd_b);
+        Spinner timesSpinner2 = findViewById(R.id.timeEnd_h);
         ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(this,R.array.timeOptions, android.R.layout.simple_spinner_item);
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         timesSpinner2.setAdapter(adapter3);
@@ -110,7 +110,7 @@ public class BusboySchedules extends AppCompatActivity implements AdapterView.On
     }
 
     private void createNameSpinner() {
-        adapterSpinner = new ArrayAdapter(this, android.R.layout.simple_spinner_item, busboyNames);
+        adapterSpinner = new ArrayAdapter(this, android.R.layout.simple_spinner_item, hostNames);
         adapterSpinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         nameSpinner.setAdapter(adapterSpinner);
         nameSpinner.setEnabled(true);
@@ -125,12 +125,12 @@ public class BusboySchedules extends AppCompatActivity implements AdapterView.On
         dayField = daySpinner.getSelectedItem().toString();
         startTimeField = timeStartSpinner.getSelectedItem().toString();
         endTimeField =timeEndSpinner.getSelectedItem().toString();
-        busboyName = nameSpinner.getSelectedItem().toString();
-        ref = root.getReference("Schedules").child("Busboys").child(busboyName);
+        hostName = nameSpinner.getSelectedItem().toString();
+        ref = root.getReference("Schedules").child("Hosts").child(hostName);
         if(dayField.compareTo("Monday")==0){
             ref.child("mondayTime").setValue(startTimeField+"-"+endTimeField);
 
-            int pos = searchList(busboyName);
+            int pos = searchList(hostName);
             if (pos!=-1){
                 list.get(pos).mondayTime = startTimeField+"-"+endTimeField;
             }
@@ -139,7 +139,7 @@ public class BusboySchedules extends AppCompatActivity implements AdapterView.On
         else if(dayField.compareTo("Tuesday")==0){
             ref.child("tuesdayTime").setValue(startTimeField+"-"+endTimeField);
 
-            int pos = searchList(busboyName);
+            int pos = searchList(hostName);
             if (pos!=-1){
                 list.get(pos).tuesdayTime = startTimeField+"-"+endTimeField;
             }
@@ -148,7 +148,7 @@ public class BusboySchedules extends AppCompatActivity implements AdapterView.On
         else if(dayField.compareTo("Wednesday")==0){
             ref.child("wednesdayTime").setValue(startTimeField+"-"+endTimeField);
 
-            int pos = searchList(busboyName);
+            int pos = searchList(hostName);
             if (pos!=-1){
                 list.get(pos).wednesdayTime = startTimeField+"-"+endTimeField;
             }
@@ -157,7 +157,7 @@ public class BusboySchedules extends AppCompatActivity implements AdapterView.On
         else if(dayField.compareTo("Thursday")==0){
 
             ref.child("thursdayTime").setValue(startTimeField+"-"+endTimeField);
-            int pos = searchList(busboyName);
+            int pos = searchList(hostName);
             if (pos!=-1){
                 list.get(pos).thursdayTime = startTimeField+"-"+endTimeField;
             }
@@ -166,7 +166,7 @@ public class BusboySchedules extends AppCompatActivity implements AdapterView.On
         else if(dayField.compareTo("Friday")==0){
             ref.child("fridayTime").setValue(startTimeField+"-"+endTimeField);
 
-            int pos = searchList(busboyName);
+            int pos = searchList(hostName);
             if (pos!=-1){
                 list.get(pos).fridayTime = startTimeField+"-"+endTimeField;
             }
@@ -175,7 +175,7 @@ public class BusboySchedules extends AppCompatActivity implements AdapterView.On
         else if(dayField.compareTo("Saturday")==0){
             ref.child("saturdayTime").setValue(startTimeField+"-"+endTimeField);
 
-            int pos = searchList(busboyName);
+            int pos = searchList(hostName);
             if (pos!=-1){
                 list.get(pos).saturdayTime = startTimeField+"-"+endTimeField;
             }
@@ -184,7 +184,7 @@ public class BusboySchedules extends AppCompatActivity implements AdapterView.On
         else if(dayField.compareTo("Sunday")==0){
             ref.child("sundayTime").setValue(startTimeField+"-"+endTimeField);
 
-            int pos = searchList(busboyName);
+            int pos = searchList(hostName);
             if (pos!=-1){
                 list.get(pos).sundayTime = startTimeField+"-"+endTimeField;
             }
@@ -197,8 +197,8 @@ public class BusboySchedules extends AppCompatActivity implements AdapterView.On
         nameSpinner.setEnabled(true);
     }
     private int searchList(String name) {
-        for(int i = 0; i< busboyNames.size(); i++){
-            if (busboyNames.get(i).compareTo(name)==0){
+        for(int i = 0; i< hostNames.size(); i++){
+            if (hostNames.get(i).compareTo(name)==0){
                 return i;
             }
         }

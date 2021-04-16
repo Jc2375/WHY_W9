@@ -45,6 +45,11 @@ public class waiter_home extends AppCompatActivity
             i.putExtras(bundle);
             startActivity(i);
         }
+        if (v.getId() == R.id.BTableStatusWaiter)
+        {
+            Intent i = new Intent(waiter_home.this, table_status.class);
+            startActivity(i);
+        }
 
 
     }

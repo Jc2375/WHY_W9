@@ -44,5 +44,11 @@ public class host_home extends AppCompatActivity {
             i.putExtras(bundle);
             startActivity(i);
         }
+
+        if (v.getId() == R.id.BTableStatusHost)
+        {
+            Intent i = new Intent(host_home.this, table_status.class);
+            startActivity(i);
+        }
     }
 }

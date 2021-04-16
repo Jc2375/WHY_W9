@@ -2,32 +2,32 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menuuu"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:onClick="onButtonClick">
 
-    <Button
-        android:id="@+id/bDeliveryAddress4"
-        android:layout_width="331dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="417dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="245dp"
-        android:text="Piscataway, NJ"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="411dp"
+        android:layout_height="682dp"
+        android:layout_marginBottom="49dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/bDeliveryAddress2"
-        android:layout_width="331dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="47dp"
-        android:layout_marginTop="216dp"
-        android:layout_marginEnd="33dp"
-        android:layout_marginBottom="446dp"
-        android:text="New Brunswick, NJ"
+        android:id="@+id/BConfirmOrder2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="678dp"
+        android:layout_marginEnd="311dp"
+        android:layout_marginBottom="5dp"
+        android:onClick="onButtonClick"
+        android:text="Confirm Order"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -36,49 +36,17 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/bDeliveryAddress3"
-        android:layout_width="331dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="49dp"
-        android:layout_marginTop="318dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="344dp"
-        android:text="East Brunswick, NJ"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="345dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="33dp"
-        android:layout_marginBottom="625dp"
-        android:text="Available Orders:"
-        android:textColor="#FFC0CB"
-        android:textSize="40sp"
+        android:id="@+id/BMenuBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="287dp"
+        android:layout_marginTop="678dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="5dp"
+        android:onClick="onButtonClick"
+        android:text="Back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/bDeliveryAddress1"
-        android:layout_width="331dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="49dp"
-        android:layout_marginTop="126dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="536dp"
-        android:text="Hackensack, NJ"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

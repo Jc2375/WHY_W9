@@ -24,7 +24,7 @@ public class busboy_home extends AppCompatActivity
             startActivity(i);
         }
         if (v.getId() == R.id.BBusboyTableStatus) {
-            Intent i = new Intent(busboy_home.this, busboy_tablestatus.class);
+            Intent i = new Intent(busboy_home.this, table_status.class);
             startActivity(i);
         }
         if(v.getId() == R.id.BbusboyClockIn){

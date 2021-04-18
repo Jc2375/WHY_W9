@@ -37,52 +37,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/BCardPayment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="57dp"
-        android:layout_marginTop="208dp"
-        android:layout_marginEnd="172dp"
-        android:layout_marginBottom="358dp"
-        android:text="Debit/Credit Card"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.522" />
 
     <Button
         android:id="@+id/BPaypalPayment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="260dp"
-        android:layout_marginEnd="266dp"
-        android:layout_marginBottom="324dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="253dp"
+        android:layout_marginEnd="134dp"
+        android:layout_marginBottom="302dp"
         android:onClick="onButtonClick"
-        android:text="Paypal"
+        android:text="Paypal or Credit/Debit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.343" />
-
-    <Button
-        android:id="@+id/BVenmoPayment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="308dp"
-        android:layout_marginEnd="267dp"
-        android:layout_marginBottom="279dp"
-        android:text="Venmo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView8"

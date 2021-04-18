@@ -3,6 +3,7 @@ package com.example.why_w9;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,7 +25,7 @@ public class table_status extends AppCompatActivity {
         if(v.getId() == R.id.table1status){
             global.Global.TN = 1;
         }
-        /*else if(v.getId() == R.id.table2status){
+        else if(v.getId() == R.id.table2status){
             global.Global.TN = 2;
         }
         else if(v.getId() == R.id.table3status){
@@ -65,18 +66,9 @@ public class table_status extends AppCompatActivity {
         }
         else if(v.getId() == R.id.table15status){
             global.Global.TN = 15;
-        }*/
-
-
-
-
-
-
-
-
-
-
+        }
 
         startActivity(i);
+        
     }
 }

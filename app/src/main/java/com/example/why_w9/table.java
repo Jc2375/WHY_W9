@@ -49,7 +49,7 @@ public class table extends AppCompatActivity
 
 
         }
-       /* else if(global.Global.TN == 2)
+        else if(global.Global.TN == 2)
         {
             DatabaseReference reff;
             reff = FirebaseDatabase.getInstance().getReference("Table").child("2");
@@ -59,7 +59,7 @@ public class table extends AppCompatActivity
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     String Status = dataSnapshot.child("Status").getValue().toString();
                     ((TextView) findViewById(R.id.tableCurrentStatus)).setText(Status);
-                    ((TextView) findViewById(R.id.tableNumber)).setText(global.Global.TN);
+                    ((TextView) findViewById(R.id.tableNumber)).setText("2");
                 }
 
                 @Override
@@ -81,7 +81,7 @@ public class table extends AppCompatActivity
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     String Status = dataSnapshot.child("Status").getValue().toString();
                     ((TextView) findViewById(R.id.tableCurrentStatus)).setText(Status);
-                    ((TextView) findViewById(R.id.tableNumber)).setText(global.Global.TN);
+                    ((TextView) findViewById(R.id.tableNumber)).setText("3");
                 }
 
                 @Override
@@ -103,7 +103,7 @@ public class table extends AppCompatActivity
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     String Status = dataSnapshot.child("Status").getValue().toString();
                     ((TextView) findViewById(R.id.tableCurrentStatus)).setText(Status);
-                    ((TextView) findViewById(R.id.tableNumber)).setText(global.Global.TN);
+                    ((TextView) findViewById(R.id.tableNumber)).setText("4");
                 }
 
                 @Override
@@ -125,7 +125,7 @@ public class table extends AppCompatActivity
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     String Status = dataSnapshot.child("Status").getValue().toString();
                     ((TextView) findViewById(R.id.tableCurrentStatus)).setText(Status);
-                    ((TextView) findViewById(R.id.tableNumber)).setText(global.Global.TN);
+                    ((TextView) findViewById(R.id.tableNumber)).setText("5");
                 }
 
                 @Override
@@ -147,7 +147,7 @@ public class table extends AppCompatActivity
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     String Status = dataSnapshot.child("Status").getValue().toString();
                     ((TextView) findViewById(R.id.tableCurrentStatus)).setText(Status);
-                    ((TextView) findViewById(R.id.tableNumber)).setText(global.Global.TN);
+                    ((TextView) findViewById(R.id.tableNumber)).setText("6");
                 }
 
                 @Override
@@ -169,7 +169,7 @@ public class table extends AppCompatActivity
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     String Status = dataSnapshot.child("Status").getValue().toString();
                     ((TextView) findViewById(R.id.tableCurrentStatus)).setText(Status);
-                    ((TextView) findViewById(R.id.tableNumber)).setText(global.Global.TN);
+                    ((TextView) findViewById(R.id.tableNumber)).setText("7");
                 }
 
                 @Override
@@ -191,7 +191,7 @@ public class table extends AppCompatActivity
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     String Status = dataSnapshot.child("Status").getValue().toString();
                     ((TextView) findViewById(R.id.tableCurrentStatus)).setText(Status);
-                    ((TextView) findViewById(R.id.tableNumber)).setText(global.Global.TN);
+                    ((TextView) findViewById(R.id.tableNumber)).setText("8");
                 }
 
                 @Override
@@ -213,7 +213,7 @@ public class table extends AppCompatActivity
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     String Status = dataSnapshot.child("Status").getValue().toString();
                     ((TextView) findViewById(R.id.tableCurrentStatus)).setText(Status);
-                    ((TextView) findViewById(R.id.tableNumber)).setText(global.Global.TN);
+                    ((TextView) findViewById(R.id.tableNumber)).setText("9");
                 }
 
                 @Override
@@ -235,7 +235,7 @@ public class table extends AppCompatActivity
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     String Status = dataSnapshot.child("Status").getValue().toString();
                     ((TextView) findViewById(R.id.tableCurrentStatus)).setText(Status);
-                    ((TextView) findViewById(R.id.tableNumber)).setText(global.Global.TN);
+                    ((TextView) findViewById(R.id.tableNumber)).setText("10");
                 }
 
                 @Override
@@ -257,7 +257,7 @@ public class table extends AppCompatActivity
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     String Status = dataSnapshot.child("Status").getValue().toString();
                     ((TextView) findViewById(R.id.tableCurrentStatus)).setText(Status);
-                    ((TextView) findViewById(R.id.tableNumber)).setText(global.Global.TN);
+                    ((TextView) findViewById(R.id.tableNumber)).setText("11");
                 }
 
                 @Override
@@ -279,7 +279,7 @@ public class table extends AppCompatActivity
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     String Status = dataSnapshot.child("Status").getValue().toString();
                     ((TextView) findViewById(R.id.tableCurrentStatus)).setText(Status);
-                    ((TextView) findViewById(R.id.tableNumber)).setText(global.Global.TN);
+                    ((TextView) findViewById(R.id.tableNumber)).setText("12");
                 }
 
                 @Override
@@ -301,7 +301,7 @@ public class table extends AppCompatActivity
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     String Status = dataSnapshot.child("Status").getValue().toString();
                     ((TextView) findViewById(R.id.tableCurrentStatus)).setText(Status);
-                    ((TextView) findViewById(R.id.tableNumber)).setText(global.Global.TN);
+                    ((TextView) findViewById(R.id.tableNumber)).setText("13");
                 }
 
                 @Override
@@ -323,7 +323,7 @@ public class table extends AppCompatActivity
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     String Status = dataSnapshot.child("Status").getValue().toString();
                     ((TextView) findViewById(R.id.tableCurrentStatus)).setText(Status);
-                    ((TextView) findViewById(R.id.tableNumber)).setText(global.Global.TN);
+                    ((TextView) findViewById(R.id.tableNumber)).setText("14");
                 }
 
                 @Override
@@ -345,7 +345,7 @@ public class table extends AppCompatActivity
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     String Status = dataSnapshot.child("Status").getValue().toString();
                     ((TextView) findViewById(R.id.tableCurrentStatus)).setText(Status);
-                    ((TextView) findViewById(R.id.tableNumber)).setText(global.Global.TN);
+                    ((TextView) findViewById(R.id.tableNumber)).setText("15");
                 }
 
                 @Override
@@ -356,7 +356,7 @@ public class table extends AppCompatActivity
 
 
 
-        }*/
+        }
 
     }
 

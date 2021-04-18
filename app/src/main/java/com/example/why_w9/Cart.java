@@ -14,10 +14,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
+import androidx.annotation.NonNull;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
+import com.example.why_w9.Common.Common;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -66,18 +66,20 @@ public class Cart extends AppCompatActivity {
         btnPlace.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-                Toast.makeText(Cart.this, "Your order has been submitted.", Toast.LENGTH_SHORT).show();
-                Bundle bundle=new Bundle();
-                bundle.putString("uid",uid);
-                bundle.putString("total",txtTotalPrice.getText().toString());
-                Intent i = new Intent(Cart.this, order_type.class);
-                i.putExtras(bundle);
-                startActivity(i);
+                if (cart.size() > 0){
+                    Toast.makeText(Cart.this, "Your order has been submitted.", Toast.LENGTH_SHORT).show();
+                    Bundle bundle=new Bundle();
+                    bundle.putString("uid",uid);
+                    bundle.putString("total",txtTotalPrice.getText().toString());
+                    Intent i = new Intent(Cart.this, order_type.class);
+                    i.putExtras(bundle);
+                    startActivity(i);
+                }
+                else {
+                    Toast.makeText(Cart.this, "Your Cart is empty!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
-
         loadListFood();
     }
 
@@ -137,6 +139,7 @@ public class Cart extends AppCompatActivity {
     private void loadListFood() {
         cart = new Database(this).getCarts();
         adapter = new CartAdapter(cart,this);
+        adapter.notifyDataSetChanged();
         recyclerView.setAdapter(adapter);
 
         //Calculate total price
@@ -152,5 +155,24 @@ public class Cart extends AppCompatActivity {
 
         //txtTotalPrice.setText(fmt.format(total));
         txtTotalPrice.setText(String.valueOf(total));
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        if (item.getTitle().equals(Common.DELETE))
+            deleteCart(item.getOrder());
+        return true;
+    }
+
+    private void deleteCart(int position) {
+        //We will remove item at List<Order> by position
+        cart.remove(position);
+        //After that, we will delete all old data from SQLite
+        new Database(this).cleanCart();
+        //And final , we will update new data from List<Order> to SQLite
+        for(Order item:cart)
+            new Database(this).addToCart(item);
+        //Refresh
+        loadListFood();
     }
 }

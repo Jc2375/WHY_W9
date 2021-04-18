@@ -56,6 +56,7 @@
         android:layout_marginEnd="236dp"
         android:layout_marginBottom="420dp"
         android:text="Table Status"
+        android:onClick="onButtonClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BHostClocking" />

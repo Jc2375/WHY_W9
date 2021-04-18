@@ -57,6 +57,10 @@
         <activity android:name=".FoodList" />
         <activity android:name=".food_detail" />
         <activity android:name=".clockinout" />
+        <activity android:name=".table_status" />
+        <activity android:name=".table" />
+        <activity android:name=".order_detail" />
+        <activity android:name=".OrdersList" />
     </application>
 
 </manifest>

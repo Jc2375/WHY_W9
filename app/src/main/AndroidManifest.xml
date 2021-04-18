@@ -52,12 +52,15 @@
         <activity android:name=".driver_available_orders" />
         <activity android:name=".driver_current_order" />
         <activity android:name=".delivery_address" />
+        <activity android:name=".busboy_tablestatus" />
         <activity android:name=".busboy_home" />
         <activity android:name=".FoodList" />
         <activity android:name=".food_detail" />
         <activity android:name=".clockinout" />
         <activity android:name=".table_status" />
         <activity android:name=".table" />
+        <activity android:name=".order_detail" />
+        <activity android:name=".OrdersList" />
     </application>
 
 </manifest>

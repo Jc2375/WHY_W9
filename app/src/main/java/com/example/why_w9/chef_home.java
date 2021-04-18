@@ -14,11 +14,12 @@ import com.google.firebase.database.FirebaseDatabase;
 public class chef_home extends AppCompatActivity {
     Button b;
     Button c;
+    String uid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chef_home);
-
+        uid=getIntent().getExtras().getString("uid");
     }
     public void onButtonClick(View v) {
         if (v.getId() == R.id.bSignOut) {
@@ -30,7 +31,8 @@ public class chef_home extends AppCompatActivity {
             Toast.makeText(chef_home.this, "View Menu", Toast.LENGTH_SHORT).show();
             Bundle bundle=new Bundle();
             bundle.putString("usertype","chef");
-            Intent i = new Intent(chef_home.this, menu_home_canorder3.class);
+            bundle.putString("uid",uid);
+            Intent i = new Intent(chef_home.this, menu_home_canorder.class);
             i.putExtras(bundle);
             startActivity(i);
         }
@@ -44,6 +46,15 @@ public class chef_home extends AppCompatActivity {
             bundle.putString("usertype","chef");
             bundle.putString("uid",uid);
             Intent i = new Intent(chef_home.this, clockinout.class);
+            i.putExtras(bundle);
+            startActivity(i);
+        }
+        if (v.getId() == R.id.BOrdersListChef) {
+            Toast.makeText(chef_home.this, "View Orders", Toast.LENGTH_SHORT).show();
+            Bundle bundle=new Bundle();
+            bundle.putString("usertype","chef");
+            bundle.putString("uid",uid);
+            Intent i = new Intent(chef_home.this, OrdersList.class);
             i.putExtras(bundle);
             startActivity(i);
         }

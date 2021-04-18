@@ -50,7 +50,15 @@ public class waiter_home extends AppCompatActivity
             Intent i = new Intent(waiter_home.this, table_status.class);
             startActivity(i);
         }
-
+        if(v.getId()== R.id.BOrdersListWaiter)
+        {
+            Bundle bundle=new Bundle();
+            bundle.putString("usertype","waiter");
+            bundle.putString("uid",uid);
+            Intent i = new Intent(waiter_home.this, OrdersList.class);
+            i.putExtras(bundle);
+            startActivity(i);
+        }
 
     }
 

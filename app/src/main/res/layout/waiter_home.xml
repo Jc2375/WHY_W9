@@ -75,6 +75,7 @@
         android:layout_marginTop="115dp"
         android:layout_marginEnd="43dp"
         android:layout_marginBottom="568dp"
+        android:onClick="onButtonClick"
         android:text="Orders List"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"

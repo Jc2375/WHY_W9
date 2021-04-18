@@ -9,15 +9,19 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
@@ -28,11 +32,13 @@ public class order_detail extends AppCompatActivity {
     String requestId;
     FirebaseDatabase database;
     DatabaseReference ordersList;
+    DatabaseReference completeOrders;
     Request currentRequest;
     List<Order> currentOrder;
     RecyclerView orders_list;
     RecyclerView.LayoutManager layoutManager;
     FirebaseRecyclerAdapter<Order,OrderDetailViewHolder> adapter;
+    DataSnapshot dataSnapshot;
     Button b;
     String uid;
     String user;
@@ -46,6 +52,7 @@ public class order_detail extends AppCompatActivity {
         orders_list.setHasFixedSize(true);
         layoutManager= new LinearLayoutManager(this);
         orders_list.setLayoutManager(layoutManager);
+        completeOrders=database.getReference("completeOrders");
         Bundle bundle = getIntent().getExtras();
          user = bundle.getString("usertype");
         uid= bundle.getString("uid");
@@ -66,6 +73,18 @@ public class order_detail extends AppCompatActivity {
     public void onButtonClick(View v) {
         if (v.getId() == R.id.BConfirmCompletion) {
             Toast.makeText(order_detail.this, "Order has been marked as Completed", Toast.LENGTH_SHORT).show();
+            FirebaseDatabase.getInstance().getReference("Requests").child(requestId).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    currentRequest=snapshot.getValue(Request.class);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+            completeOrders.child(String.valueOf(System.currentTimeMillis())).setValue(currentRequest);
             FirebaseDatabase.getInstance().getReference().child("Requests").child(requestId).removeValue();
             Bundle bundle=new Bundle();
             bundle.putString("uid",uid);

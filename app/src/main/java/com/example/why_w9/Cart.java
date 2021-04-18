@@ -69,10 +69,11 @@ public class Cart extends AppCompatActivity {
 
 
                 Toast.makeText(Cart.this, "Your order has been submitted.", Toast.LENGTH_SHORT).show();
-                Request request = new Request (uid,txtTotalPrice.getText().toString(), cart);
-                requests.child(String.valueOf(System.currentTimeMillis())).setValue(request);
-                new Database(getBaseContext()).cleanCart();
+                Bundle bundle=new Bundle();
+                bundle.putString("uid",uid);
+                bundle.putString("total",txtTotalPrice.getText().toString());
                 Intent i = new Intent(Cart.this, order_type.class);
+                i.putExtras(bundle);
                 startActivity(i);
             }
         });

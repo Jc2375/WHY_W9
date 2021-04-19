@@ -37,8 +37,10 @@ public class finishedCookingDetails extends AppCompatActivity {
     FirebaseRecyclerAdapter<Order,OrderDetailViewHolder> adapter;
     DataSnapshot dataSnapshot;
     Button b;
+    Button b2;
     String uid;
     String user;
+    int paid=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,8 +55,17 @@ public class finishedCookingDetails extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         user = bundle.getString("usertype");
         uid= bundle.getString("uid");
+        paid=bundle.getInt("paid");
         b = findViewById(R.id.BConfirmCompletion);
-        b.setVisibility(View.VISIBLE);
+        b2 = findViewById(R.id.BEmployeeConfirmPayment2);
+        if(paid==1)
+        {
+            b.setVisibility(View.VISIBLE);
+        }
+        else if(paid==0){
+            b2.setVisibility(View.VISIBLE);
+        }
+
         if(getIntent() !=null)
         {
             requestId=bundle.getString("requestId");
@@ -66,31 +77,38 @@ public class finishedCookingDetails extends AppCompatActivity {
     }
     public void onButtonClick(View v) {
         if (v.getId() == R.id.BConfirmCompletion) {
-            Toast.makeText(finishedCookingDetails.this, "Order has been marked as Completed", Toast.LENGTH_SHORT).show();
-            FirebaseDatabase.getInstance().getReference().child("completeOrders").child(requestId).removeValue();
+                Toast.makeText(finishedCookingDetails.this, "Order has been marked as Completed", Toast.LENGTH_SHORT).show();
+                FirebaseDatabase.getInstance().getReference().child("completeOrders").child(requestId).removeValue();
 
-            Bundle bundle=new Bundle();
-            bundle.putString("uid",uid);
-            Intent i;
-            if(user.equals("waiter"))
-            {
-                 i = new Intent(finishedCookingDetails.this, waiter_home.class);
-                i.putExtras(bundle);
-                startActivity(i);
-            }
-            else if(user.equals("host"))
-            {
-                 i = new Intent(finishedCookingDetails.this, host_home.class);
-                i.putExtras(bundle);
-                startActivity(i);
-            }
-            else if(user.equals("driver"))
-            {
-                 i = new Intent(finishedCookingDetails.this, driver_home.class);
-                i.putExtras(bundle);
-                startActivity(i);
-            }
+                Bundle bundle=new Bundle();
+                bundle.putString("uid",uid);
+                Intent i;
+                if(user.equals("waiter"))
+                {
+                    i = new Intent(finishedCookingDetails.this, waiter_home.class);
+                    i.putExtras(bundle);
+                    startActivity(i);
+                }
+                else if(user.equals("host"))
+                {
+                    i = new Intent(finishedCookingDetails.this, host_home.class);
+                    i.putExtras(bundle);
+                    startActivity(i);
+                }
+                else if(user.equals("driver"))
+                {
+                    i = new Intent(finishedCookingDetails.this, driver_home.class);
+                    i.putExtras(bundle);
+                    startActivity(i);
+                }
 
+
+        }
+        if(v.getId()== R.id.BEmployeeConfirmPayment2)
+        {
+            paid=1;
+            b.setVisibility(View.VISIBLE);
+            b2.setVisibility(View.INVISIBLE);
         }
     }
     private void getDetailOrder(String requestId) {

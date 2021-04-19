@@ -18,18 +18,9 @@
         android:layout_width="410dp"
         android:layout_height="41dp"
         android:layout_marginTop="7dp"
-        android:text="  Orders To deliver"
+        android:text="  List of Orders"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/BConfirmCompletion2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="121dp"
-        android:layout_marginTop="544dp"
-        android:text="Order Delivered"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/BEmployeeConfirmPayment2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="552dp"
+        android:onClick="onButtonClick"
+        android:text="Confirm Payment"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/orders_items"
         android:layout_width="411dp"
@@ -32,7 +44,7 @@
         android:id="@+id/BConfirmCompletion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="200dp"
         android:layout_marginTop="552dp"
         android:onClick="onButtonClick"
         android:text="Confirm Completion"

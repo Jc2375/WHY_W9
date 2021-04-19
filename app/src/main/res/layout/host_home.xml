@@ -42,6 +42,7 @@
         android:layout_marginStart="236dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="484dp"
+        android:onClick="onButtonClick"
         android:text="Orders List"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,8 +56,8 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="236dp"
         android:layout_marginBottom="420dp"
-        android:text="Table Status"
         android:onClick="onButtonClick"
+        android:text="Table Status"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BHostClocking" />
@@ -100,6 +101,17 @@
         android:text="Sign Out"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/BHostTakeoutOrders"
+        android:layout_width="105dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="337dp"
+        android:onClick="onButtonClick"
+        android:text="Takeout Orders"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

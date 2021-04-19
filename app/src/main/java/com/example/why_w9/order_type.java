@@ -50,10 +50,12 @@ public class order_type extends AppCompatActivity {
         if (v.getId() == R.id.bDineIn) {
             Toast.makeText(order_type.this, "Select Payment Type", Toast.LENGTH_SHORT).show();
             Request request = new Request (uid,total, cart,"DineIn");
-            requests.child(String.valueOf(System.currentTimeMillis())).setValue(request);
+            String w=String.valueOf(System.currentTimeMillis());
+            requests.child(w).setValue(request);
             new Database(getBaseContext()).cleanCart();
             Bundle bundle=new Bundle();
             bundle.putBoolean("Delivery",false);
+            bundle.putString("requestId",w);
             Intent i = new Intent(order_type.this, payment_type.class);
             i.putExtras(bundle);
             startActivity(i);
@@ -61,10 +63,12 @@ public class order_type extends AppCompatActivity {
         if (v.getId() == R.id.bTakeout) {
             Toast.makeText(order_type.this, "Select Payment Type", Toast.LENGTH_SHORT).show();
             Request request = new Request (uid,total, cart,"Takeout");
-            requests.child(String.valueOf(System.currentTimeMillis())).setValue(request);
+            String w=String.valueOf(System.currentTimeMillis());
+            requests.child(w).setValue(request);
             new Database(getBaseContext()).cleanCart();
             Bundle bundle=new Bundle();
             bundle.putBoolean("Delivery",false);
+            bundle.putString("requestId",w);
             Intent i = new Intent(order_type.this, payment_type.class);
             i.putExtras(bundle);
             startActivity(i);
@@ -72,10 +76,12 @@ public class order_type extends AppCompatActivity {
         if (v.getId() == R.id.bDelivery) {
             Toast.makeText(order_type.this, "Input Address", Toast.LENGTH_SHORT).show();
             Request request = new Request (uid,total, cart,"Delivery");
-            requests.child(String.valueOf(System.currentTimeMillis())).setValue(request);
+            String w=String.valueOf(System.currentTimeMillis());
+            requests.child(w).setValue(request);
             new Database(getBaseContext()).cleanCart();
             Bundle bundle=new Bundle();
             bundle.putBoolean("Delivery",true);
+            bundle.putString("requestId",w);
             Intent i = new Intent(order_type.this, delivery_address.class);
             i.putExtras(bundle);
             startActivity(i);

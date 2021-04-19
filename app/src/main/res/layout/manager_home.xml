@@ -44,6 +44,7 @@
         android:layout_marginTop="344dp"
         android:layout_marginEnd="223dp"
         android:layout_marginBottom="339dp"
+        android:onClick="onButtonClick"
         android:text="Order List"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

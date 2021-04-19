@@ -25,6 +25,7 @@ public class finishedCooking extends AppCompatActivity {
     FirebaseRecyclerAdapter<Request,OrderToDeliverViewHolder> adapter;
     String uid;
     String user;
+    int paid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,7 +79,7 @@ public class finishedCooking extends AppCompatActivity {
                         }
                     });
                 }
-                else if(model.getOrderType().equals("Takeout")&&user.equals("Host"))
+                else if(model.getOrderType().equals("Takeout")&&user.equals("host"))
                 {
                     viewHolder.txtOrderName.setText(model.getUid());
                     final Request clickItem=model;
@@ -98,6 +99,7 @@ public class finishedCooking extends AppCompatActivity {
                 else if(model.getOrderType().equals("Delivery")&&user.equals("driver"))
                 {
                     viewHolder.txtOrderName.setText(model.getUid());
+                    paid=model.getPaid();
                     final Request clickItem=model;
                     viewHolder.setItemClickListener(new ItemClickListener()
                     {
@@ -108,6 +110,7 @@ public class finishedCooking extends AppCompatActivity {
                             orderList.putExtra("requestId", adapter.getRef(position).getKey());
                             orderList.putExtra("uid", uid);
                             orderList.putExtra("usertype", user);
+                            orderList.putExtra("paid", paid);
                             startActivity(orderList);
                         }
                     });

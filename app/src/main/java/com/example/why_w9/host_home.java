@@ -44,6 +44,32 @@ public class host_home extends AppCompatActivity {
             i.putExtras(bundle);
             startActivity(i);
         }
+        if(v.getId() == R.id.BOrdersListHost){
+            //Get uid from database
+            FirebaseDatabase db = FirebaseDatabase.getInstance();
+            String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+            //Creating bundle to pass along info of uid and usertype to clock in page
+            Bundle bundle = new Bundle();
+            bundle.putString("usertype","host");
+            bundle.putString("uid",uid);
+            Intent i = new Intent(host_home.this, OrdersList.class);
+            i.putExtras(bundle);
+            startActivity(i);
+        }
+        if(v.getId() == R.id.BHostTakeoutOrders){
+            //Get uid from database
+            FirebaseDatabase db = FirebaseDatabase.getInstance();
+            String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+            //Creating bundle to pass along info of uid and usertype to clock in page
+            Bundle bundle = new Bundle();
+            bundle.putString("usertype","host");
+            bundle.putString("uid",uid);
+            Intent i = new Intent(host_home.this,finishedCooking.class);
+            i.putExtras(bundle);
+            startActivity(i);
+        }
 
         if (v.getId() == R.id.BTableStatusHost)
         {

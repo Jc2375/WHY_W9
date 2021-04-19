@@ -7,12 +7,12 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="255dp"
-        android:layout_height="95dp"
+        android:layout_width="289dp"
+        android:layout_height="76dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="13dp"
-        android:text="Pick Reservation Time"
+        android:text="Create Reservation"
         android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="30sp"
@@ -35,14 +35,40 @@
 
     <TimePicker
         android:id="@+id/timePicker1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/set_button"
+        android:layout_width="393dp"
+        android:layout_height="339dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="141dp"
         android:layout_marginBottom="73dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="110dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="101dp"
+        android:text="Number Of Guests:"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/number_of_guests"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="101dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="457dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

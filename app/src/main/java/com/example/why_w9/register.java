@@ -30,6 +30,7 @@ public class register extends AppCompatActivity
     Button mRegisterBtn;
     FirebaseAuth fAuth;
     boolean Manager_check;
+
     String typeofuser;
 
 

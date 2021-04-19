@@ -5,8 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,7 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class register extends AppCompatActivity
 {
-
+    Spinner type;
     EditText mEmail, mPassword, mUsertype;
     TextView text10;
     Button mRegisterBtn;
@@ -40,10 +42,14 @@ public class register extends AppCompatActivity
         Manager_check=bundle.getBoolean("Manager_Check");
 
         if(Manager_check == true){
-            mUsertype = findViewById(R.id.mUsertype);
             text10 = findViewById(R.id.textView10);
             text10.setVisibility(View.VISIBLE);
-            mUsertype.setVisibility(View.VISIBLE);
+            type = findViewById(R.id.typeSpinner);
+            type.setVisibility(View.VISIBLE);
+            String[] employeeTypes = getResources().getStringArray(R.array.employeeTypes);
+            ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,employeeTypes);
+            spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            type.setAdapter(spinnerAdapter);
 
         }
 
@@ -67,9 +73,11 @@ public class register extends AppCompatActivity
         String email = mEmail.getText().toString().trim();
         String password = mPassword.getText().toString().trim();
 
+        //will need to change this 4/18
         if(Manager_check == true)
         {
-            typeofuser = mUsertype.getText().toString().trim();
+            //typeofuser = mUsertype.getText().toString().trim();
+            typeofuser = type.getSelectedItem().toString();
         }
 
 

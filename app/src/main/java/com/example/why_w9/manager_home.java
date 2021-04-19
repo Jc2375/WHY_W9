@@ -37,6 +37,10 @@ public class manager_home extends AppCompatActivity
         Intent intent = new Intent(this,AnalyticsOptions.class);
         startActivity(intent);
     }
+    public void toInventory(View v){
+        Intent intent = new Intent(this,Inventory.class);
+        startActivity(intent);
+    }
 
 
 

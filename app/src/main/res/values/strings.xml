@@ -45,4 +45,15 @@
         <item>November</item>
         <item>December</item>
     </string-array>
+
+    <string-array name="employeeTypes">
+        <item>Busboy</item>
+        <item>Host</item>
+        <item>Waiter</item>
+        <item>Chef</item>
+        <item>Driver</item>
+        <item>Waiter</item>
+        <item>Customer</item>
+    </string-array>
+
 </resources>

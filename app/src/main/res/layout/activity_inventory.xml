@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding = "8dp"
-    tools:context=".EmployeePayroll">
+    android:padding="8dp"
+    tools:context=".Inventory">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <ExpandableListView
+        android:id="@+id/inventoryExpList"
         android:layout_width="match_parent"
-        android:layout_height="550dp"
-        android:id="@+id/payrollRecView"/>
+        android:layout_height="match_parent"
+        android:layoutDirection="rtl"/>
 
 </LinearLayout>

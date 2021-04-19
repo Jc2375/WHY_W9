@@ -1,55 +1,68 @@
 package com.example.why_w9;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ExpandableListView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class EmployeePayroll extends AppCompatActivity {
-    ExpandableListViewAdapter listViewAdapter;
-    ExpandableListView expandableListView;
-    List<String> nameList;
-    HashMap<String,List<String>> payroll_Info;
+public class  EmployeePayroll extends AppCompatActivity {
+    FirebaseDatabase root;
+    DatabaseReference ref;
+    private RecyclerView recyclerView;
+    private PayrollRecAdapter adapter;
+    private ArrayList<PayrollModel> list;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee_payroll);
 
-        expandableListView = findViewById(R.id.exListView);
-        make_payroll();
-        listViewAdapter = new ExpandableListViewAdapter(this,nameList,payroll_Info);
-        expandableListView.setAdapter(listViewAdapter);
-    }
+        //initialize variables needed
+        recyclerView = findViewById(R.id.payrollRecView);
+        recyclerView.hasFixedSize();
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        root = FirebaseDatabase.getInstance();
+        ref = root.getReference("Payroll");
+        list = new ArrayList<>();
+        adapter = new PayrollRecAdapter(this,list);
 
-    public void make_payroll(){
-        nameList = new ArrayList<String>();
-        payroll_Info = new HashMap<String,List<String>>();
+        //originally empty
+        recyclerView.setAdapter(adapter);
 
-        nameList.add("employee1");
-        nameList.add("employee2");
-        nameList.add("employee3");
+        //get data from firebase
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot snapshot1:snapshot.getChildren()){
+                    PayrollModel model = snapshot1.getValue(PayrollModel.class);
+                    list.add(model);
+                }
+                //show data on recycler view since we've updated
+                adapter.notifyDataSetChanged();
+            }
 
-        List<String> info = new ArrayList<>();
-        info.add("Role:");
-        info.add("Hourly Rate:");
-        info.add("Hours worked this week:");
-        info.add("Pay this week:");
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
 
-
-        payroll_Info.put(nameList.get(0),info);
-        payroll_Info.put(nameList.get(1),info);
-        payroll_Info.put(nameList.get(2),info);
-
-    }
-    public void backtoOptions(View v){
-        Intent intent = new Intent(EmployeePayroll.this, ManageEmployeeOptions.class);
-        startActivity(intent);
     }
 }
+

@@ -31,6 +31,7 @@ public class register extends AppCompatActivity
     FirebaseAuth fAuth;
     boolean Manager_check;
 
+
     String typeofuser;
 
 

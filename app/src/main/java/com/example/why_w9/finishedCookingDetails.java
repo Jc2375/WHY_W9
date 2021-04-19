@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,16 +16,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
 
-public class order_detail extends AppCompatActivity {
+public class finishedCookingDetails extends AppCompatActivity {
     TextView test_price;
 
     String requestId;
@@ -47,20 +44,17 @@ public class order_detail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.order_detail);
         database= FirebaseDatabase.getInstance();
-        ordersList= database.getReference("Requests");
+        ordersList= database.getReference("completeOrders");
         orders_list= (RecyclerView)findViewById(R.id.orders_items);
         orders_list.setHasFixedSize(true);
         layoutManager= new LinearLayoutManager(this);
         orders_list.setLayoutManager(layoutManager);
         completeOrders=database.getReference("completeOrders");
         Bundle bundle = getIntent().getExtras();
-         user = bundle.getString("usertype");
+        user = bundle.getString("usertype");
         uid= bundle.getString("uid");
-        if(user.equals("chef")||user.equals("manager"))
-        {
-            b = findViewById(R.id.BConfirmCompletion);
-            b.setVisibility(View.VISIBLE);
-        }
+        b = findViewById(R.id.BConfirmCompletion);
+        b.setVisibility(View.VISIBLE);
         if(getIntent() !=null)
         {
             requestId=bundle.getString("requestId");
@@ -72,34 +66,35 @@ public class order_detail extends AppCompatActivity {
     }
     public void onButtonClick(View v) {
         if (v.getId() == R.id.BConfirmCompletion) {
-            Toast.makeText(order_detail.this, "Order has been marked as Completed", Toast.LENGTH_SHORT).show();
-            getDetailRequest(requestId);
+            Toast.makeText(finishedCookingDetails.this, "Order has been marked as Completed", Toast.LENGTH_SHORT).show();
+            FirebaseDatabase.getInstance().getReference().child("completeOrders").child(requestId).removeValue();
 
             Bundle bundle=new Bundle();
             bundle.putString("uid",uid);
-            Intent i = new Intent(order_detail.this, chef_home.class);
-            i.putExtras(bundle);
-            startActivity(i);
+            Intent i;
+            if(user.equals("waiter"))
+            {
+                 i = new Intent(finishedCookingDetails.this, waiter_home.class);
+                i.putExtras(bundle);
+                startActivity(i);
+            }
+            else if(user.equals("host"))
+            {
+                 i = new Intent(finishedCookingDetails.this, host_home.class);
+                i.putExtras(bundle);
+                startActivity(i);
+            }
+            else if(user.equals("driver"))
+            {
+                 i = new Intent(finishedCookingDetails.this, driver_home.class);
+                i.putExtras(bundle);
+                startActivity(i);
+            }
+
         }
     }
-    public void getDetailRequest(String requestId)
-    {
-        FirebaseDatabase.getInstance().getReference("Requests").child(requestId).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                currentRequest=snapshot.getValue(Request.class);
-                completeOrders.child(String.valueOf(System.currentTimeMillis())).setValue(currentRequest);
-                FirebaseDatabase.getInstance().getReference().child("Requests").child(requestId).removeValue();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
     private void getDetailOrder(String requestId) {
-        Query query=FirebaseDatabase.getInstance().getReference().child("Requests").child(requestId).child("foods");
+        Query query=FirebaseDatabase.getInstance().getReference().child("completeOrders").child(requestId).child("foods");
         FirebaseRecyclerOptions<Order> options = new FirebaseRecyclerOptions.Builder<Order>().setQuery(query,Order.class).build();
 
         adapter=new FirebaseRecyclerAdapter<Order, OrderDetailViewHolder>(options) {
@@ -112,7 +107,6 @@ public class order_detail extends AppCompatActivity {
             @Override
             protected void onBindViewHolder( OrderDetailViewHolder viewHolder, int position, Order model)
             {
-                Toast.makeText(order_detail.this, ""+model.getProductName(), Toast.LENGTH_SHORT).show();
                 viewHolder.txtOrderItem1.setText("Item: "+model.getProductName());
                 viewHolder.txtOrderItem2.setText("          Quantity: "+model.getQuantity());
                 final Order clickItem=model;

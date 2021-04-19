@@ -8,10 +8,13 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class driver_home extends AppCompatActivity {
+    String uid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.driver_home);
+        Bundle bundle = getIntent().getExtras();
+        uid = bundle.getString("uid");
     }
 
     public void onButtonClick(View v) {
@@ -22,12 +25,20 @@ public class driver_home extends AppCompatActivity {
         }
 
         if (v.getId() == R.id.bViewAvailableOrders) {
-            Intent i = new Intent(driver_home.this, driver_available_orders.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("usertype","driver");
+            bundle.putString("uid",uid);
+            Intent i = new Intent(driver_home.this, finishedCooking.class);
+            i.putExtras(bundle);
             startActivity(i);
         }
 
-        if (v.getId() == R.id.bViewCurrentOrder) {
+        if (v.getId() == R.id.bViewCurrentOrder) {//dont need right now, talk to jason about why
+            Bundle bundle = new Bundle();
+            bundle.putString("usertype","driver");
+            bundle.putString("uid",uid);
             Intent i = new Intent(driver_home.this, driver_current_order.class);
+            i.putExtras(bundle);
             startActivity(i);
         }
     }

@@ -59,7 +59,15 @@ public class waiter_home extends AppCompatActivity
             i.putExtras(bundle);
             startActivity(i);
         }
-
+        if(v.getId()== R.id.BWaiterOrdersToDeliver)
+        {
+            Bundle bundle=new Bundle();
+            bundle.putString("usertype","waiter");
+            bundle.putString("uid",uid);
+            Intent i = new Intent(waiter_home.this, finishedCooking.class);
+            i.putExtras(bundle);
+            startActivity(i);
+        }
     }
 
 

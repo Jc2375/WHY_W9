@@ -62,6 +62,8 @@
         <activity android:name=".table" />
         <activity android:name=".order_detail" />
         <activity android:name=".OrdersList" />
+        <activity android:name=".finishedCooking" />
+        \<activity android:name=".finishedCookingDetails" />
     </application>
 
 </manifest>

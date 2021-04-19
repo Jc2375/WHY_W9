@@ -12,14 +12,14 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/order_detail_item1"
+            android:id="@+id/order_detail_item1_todeliver"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
             android:textSize="28sp" />
 
         <TextView
-            android:id="@+id/order_detail_item2"
+            android:id="@+id/order_detail_item2_todeliver"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

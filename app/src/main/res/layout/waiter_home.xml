@@ -113,4 +113,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/BWaiterOrdersToDeliver"
+        android:layout_width="122dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="259dp"
+        android:layout_marginTop="274dp"
+        android:onClick="onButtonClick"
+        android:text="Orders Ready to Deliver"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

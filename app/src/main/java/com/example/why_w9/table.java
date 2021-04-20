@@ -376,21 +376,25 @@ public class table extends AppCompatActivity
 
         if (v.getId() == R.id.Available) {
             FirebaseDatabase.getInstance().getReference("Table").child(String.valueOf(global.Global.TN)).child("Status").setValue("Available");
+            ((TextView) findViewById(R.id.tableCurrentStatus)).setText("Available");
             Toast.makeText(table.this, "Table Status Has Been Set To: Available!", Toast.LENGTH_SHORT).show();
         }
 
         if (v.getId() == R.id.Taken) {
             FirebaseDatabase.getInstance().getReference("Table").child(String.valueOf(global.Global.TN)).child("Status").setValue("Taken");
+            ((TextView) findViewById(R.id.tableCurrentStatus)).setText("Available");
             Toast.makeText(table.this, "Table Status Has Been Set To: Available!", Toast.LENGTH_SHORT).show();
         }
 
         if (v.getId() == R.id.Reserved) {
             FirebaseDatabase.getInstance().getReference("Table").child(String.valueOf(global.Global.TN)).child("Status").setValue("Reserved");
+            ((TextView) findViewById(R.id.tableCurrentStatus)).setText("Available");
             Toast.makeText(table.this, "Table Status Has Been Set To: Available!", Toast.LENGTH_SHORT).show();
         }
 
         if (v.getId() == R.id.Dirty) {
             FirebaseDatabase.getInstance().getReference("Table").child(String.valueOf(global.Global.TN)).child("Status").setValue("Dirty");
+            ((TextView) findViewById(R.id.tableCurrentStatus)).setText("Available");
             Toast.makeText(table.this, "Table Status Has Been Set To: Available!", Toast.LENGTH_SHORT).show();
         }
     }

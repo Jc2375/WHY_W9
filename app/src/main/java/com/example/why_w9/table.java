@@ -373,20 +373,25 @@ public class table extends AppCompatActivity
 
 
     public void onButtonClick(View v) {
+
         if (v.getId() == R.id.Available) {
             FirebaseDatabase.getInstance().getReference("Table").child(String.valueOf(global.Global.TN)).child("Status").setValue("Available");
+            Toast.makeText(table.this, "Table Status Has Been Set To: Available!", Toast.LENGTH_SHORT).show();
         }
 
         if (v.getId() == R.id.Taken) {
             FirebaseDatabase.getInstance().getReference("Table").child(String.valueOf(global.Global.TN)).child("Status").setValue("Taken");
+            Toast.makeText(table.this, "Table Status Has Been Set To: Available!", Toast.LENGTH_SHORT).show();
         }
 
         if (v.getId() == R.id.Reserved) {
             FirebaseDatabase.getInstance().getReference("Table").child(String.valueOf(global.Global.TN)).child("Status").setValue("Reserved");
+            Toast.makeText(table.this, "Table Status Has Been Set To: Available!", Toast.LENGTH_SHORT).show();
         }
 
         if (v.getId() == R.id.Dirty) {
             FirebaseDatabase.getInstance().getReference("Table").child(String.valueOf(global.Global.TN)).child("Status").setValue("Dirty");
+            Toast.makeText(table.this, "Table Status Has Been Set To: Available!", Toast.LENGTH_SHORT).show();
         }
     }
 

@@ -26,6 +26,8 @@ public class table extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.table);
 
+
+
         if(global.Global.TN == 1)
         {
             DatabaseReference reff;
@@ -358,6 +360,23 @@ public class table extends AppCompatActivity
 
         }
 
+        Bundle employee= getIntent().getExtras();
+        boolean busboy_check =employee.getBoolean("Busboy_check");
+        if(busboy_check == true)
+        {
+
+        }
+
+
+    }
+
+
+
+    public void onButtonClick(View v) {
+        if (v.getId() == R.id.Available) {
+
+
+        }
     }
 
 }

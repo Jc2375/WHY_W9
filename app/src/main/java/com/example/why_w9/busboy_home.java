@@ -12,6 +12,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class busboy_home extends AppCompatActivity
 {
+    public static String ID= FirebaseAuth.getInstance().getCurrentUser().getUid();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

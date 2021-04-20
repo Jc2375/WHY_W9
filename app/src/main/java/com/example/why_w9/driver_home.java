@@ -7,7 +7,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class driver_home extends AppCompatActivity {
+    public static String ID= FirebaseAuth.getInstance().getCurrentUser().getUid();
+
     String uid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

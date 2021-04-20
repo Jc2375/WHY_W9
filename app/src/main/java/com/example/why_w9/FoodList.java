@@ -55,7 +55,7 @@ public class FoodList extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(@NonNull FoodViewHolder foodViewHolder, int i, @NonNull Food food) {
                 foodViewHolder.food_name.setText(food.getName());
-                Toast.makeText(FoodList.this,""+food.getName(),Toast.LENGTH_SHORT).show();
+
                 Picasso.get().load(food.getImage()).into(foodViewHolder.food_image);
 
                 final Food local =food;

@@ -6,11 +6,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.why_w9.Config.Config;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.paypal.android.sdk.payments.PayPalConfiguration;
 import com.paypal.android.sdk.payments.PayPalPayment;
 import com.paypal.android.sdk.payments.PayPalService;
@@ -20,6 +28,7 @@ import com.paypal.android.sdk.payments.PaymentConfirmation;
 
 import org.json.JSONException;
 import java.math.BigDecimal;
+import java.util.List;
 
 
 public class payment_type extends AppCompatActivity {
@@ -34,6 +43,7 @@ public class payment_type extends AppCompatActivity {
     EditText edtAmout;
 
     String amount = "";
+    String total;
 
     @Override
     protected void onDestroy()
@@ -49,6 +59,8 @@ public class payment_type extends AppCompatActivity {
 
         Bundle bundle= getIntent().getExtras();
         boolean deliv=bundle.getBoolean("Delivery");
+
+
         if(deliv==true)
         {
             setContentView(R.layout.payment_type);
@@ -66,6 +78,7 @@ public class payment_type extends AppCompatActivity {
         startService(intent);
 
 
+
         BPaypalPayment = (Button)findViewById(R.id.BPaypalPayment);
         edtAmout = (EditText)findViewById(R.id.edtAmount);
         //add amount here
@@ -79,11 +92,32 @@ public class payment_type extends AppCompatActivity {
             case R.id.BPaypalPayment: {
                 processPayment();
             }
+            case R.id.BCashPayment:{
+                //FirebaseDatabase.getInstance().getReference().child("Requests").child(order_type.w).child("paid").setValue("1");
+                Toast.makeText(payment_type.this, "Your order has been submitted.", Toast.LENGTH_SHORT).show();
+
+                //setContentView(R.layout.activity_main);
+            }
         }
     }
 
         private void processPayment(){
-            amount = edtAmout.getText().toString();
+
+
+            //NEED TO FIX THIS PART HERE -------------------------------------------------
+
+            //Bundle bundle = getIntent().getExtras();
+            //total=bundle.getString("total");
+
+
+            int amount2= Integer.parseInt(edtAmout.getText().toString());
+            //int amount3 =  Cart.totalCost;
+            int amount4 = (amount2)  /*+ (amount3)*/ ; //NEED TO ADD HERE.. current code does not add correct values
+
+            amount = String.valueOf(amount4);
+
+            //-----------------------------------------------------------------------------
+
             PayPalPayment payPalPayment = new PayPalPayment(new BigDecimal(String.valueOf(amount)), "USD",
                 "Pay Your Bill + Tip", PayPalPayment.PAYMENT_INTENT_SALE);
             Intent intent = new Intent(this, PaymentActivity.class);

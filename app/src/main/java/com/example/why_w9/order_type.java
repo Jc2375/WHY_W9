@@ -19,6 +19,8 @@ import java.util.List;
 import Database.Database;
 
 public class order_type extends AppCompatActivity {
+    public static String w=String.valueOf(System.currentTimeMillis());
+
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
 
@@ -32,6 +34,10 @@ public class order_type extends AppCompatActivity {
 
     CartAdapter adapter;
     String uid; String total;
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,12 +51,13 @@ public class order_type extends AppCompatActivity {
         requests=database.getReference("Requests");
         cart = new Database(this).getCarts();
 
+
+
     }
     public void onButtonClick(View v) {
         if (v.getId() == R.id.bDineIn) {
             Toast.makeText(order_type.this, "Select Payment Type", Toast.LENGTH_SHORT).show();
             Request request = new Request (uid,total, cart,"DineIn");
-            String w=String.valueOf(System.currentTimeMillis());
             requests.child(w).setValue(request);
             new Database(getBaseContext()).cleanCart();
             Bundle bundle=new Bundle();
@@ -76,7 +83,7 @@ public class order_type extends AppCompatActivity {
         if (v.getId() == R.id.bDelivery) {
             Toast.makeText(order_type.this, "Input Address", Toast.LENGTH_SHORT).show();
             Request request = new Request (uid,total, cart,"Delivery");
-            String w=String.valueOf(System.currentTimeMillis());
+
             requests.child(w).setValue(request);
             new Database(getBaseContext()).cleanCart();
             Bundle bundle=new Bundle();

@@ -39,12 +39,15 @@ public class Cart extends AppCompatActivity {
     DatabaseReference requests;
 
     TextView txtTotalPrice;
+
     Button btnPlace;
 
     List<Order> cart = new ArrayList<>();
 
     CartAdapter adapter;
     String uid;
+
+    public static int totalCost = R.id.total;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,13 +66,13 @@ public class Cart extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         txtTotalPrice = (TextView)findViewById(R.id.total);
+
         btnPlace = (Button)findViewById(R.id.BPlaceOrder); //previously FButton instead of Button
 
         btnPlace.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (cart.size() > 0){
-                    Toast.makeText(Cart.this, "Your order has been submitted.", Toast.LENGTH_SHORT).show();
                     Bundle bundle=new Bundle();
                     bundle.putString("uid",uid);
                     bundle.putString("total",txtTotalPrice.getText().toString());

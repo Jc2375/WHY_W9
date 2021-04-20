@@ -34,7 +34,7 @@ public class OrdersList extends AppCompatActivity {
         OrdersList=database.getReference("Requests");
         //---------------
         Bundle bundle = getIntent().getExtras();
-         user = bundle.getString("usertype");
+        user = bundle.getString("usertype");
         uid= bundle.getString("uid");
 
 

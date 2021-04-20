@@ -194,10 +194,23 @@ public class clockinout extends AppCompatActivity {
                     if(usertype.toLowerCase().equals("host")){
 
 
-                        //Creating intent and transferring uid and usertype back to chef home
+                        //Creating intent and transferring uid and usertype back to host home
                         Intent i = new Intent(clockinout.this, host_home.class);
                         Bundle bundle = new Bundle();
                         bundle.putString("usertype","host");
+                        bundle.putString("uid",userid);
+                        i.putExtras(bundle);
+                        startActivity(i);
+                    }
+
+                    //driver check
+                    if(usertype.toLowerCase().equals("driver")){
+
+
+                        //Creating intent and transferring uid and usertype back to driver home
+                        Intent i = new Intent(clockinout.this, driver_home.class);
+                        Bundle bundle = new Bundle();
+                        bundle.putString("usertype","driver");
                         bundle.putString("uid",userid);
                         i.putExtras(bundle);
                         startActivity(i);

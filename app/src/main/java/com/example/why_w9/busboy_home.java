@@ -29,11 +29,6 @@ public class busboy_home extends AppCompatActivity
             Intent i = new Intent(busboy_home.this, table_status.class);
             startActivity(i);
 
-            Bundle employee=new Bundle();
-            employee.putBoolean("Busboy_Check",true);
-            Intent intent = new Intent(this, register.class);
-            intent.putExtras(employee);
-            startActivity(i);
         }
         if(v.getId() == R.id.BbusboyClockIn){
             //Get uid from database

@@ -66,7 +66,12 @@ public class login extends AppCompatActivity {
                         if(email.equals("manager@gmail.com")&&password.equals("managerpassword"))
                         {
                             Toast.makeText(login.this, "User Signed In", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), manager_home.class));
+                            Bundle bundle=new Bundle();
+                            String uid="4I9F0UhStuRLQ20GDJlMkIx9VhC3";
+                            bundle.putString("uid",uid);
+                            Intent intent = new Intent(getApplicationContext(),manager_home.class);
+                            intent.putExtras(bundle);
+                            startActivity(intent);
                             return;
                         }
                         /*if(email.equals("driver@gmail.com")&&password.equals("driverpassword"))
@@ -161,7 +166,12 @@ public class login extends AppCompatActivity {
                                                 intent.putExtras(bundle);
                                                 startActivity(intent);
                                             }
-
+                                            else if(Usertype.equals("Manager"))
+                                            {
+                                                Intent intent = new Intent(getApplicationContext(), manager_home.class);
+                                                intent.putExtras(bundle);
+                                                startActivity(intent);
+                                            }
                                         }
 
 

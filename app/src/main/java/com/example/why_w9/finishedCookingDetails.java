@@ -40,7 +40,7 @@ public class finishedCookingDetails extends AppCompatActivity {
     Button b2;
     String uid;
     String user;
-    int paid=0;
+    String paid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,14 +55,14 @@ public class finishedCookingDetails extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         user = bundle.getString("usertype");
         uid= bundle.getString("uid");
-        paid=bundle.getInt("paid");
+        paid=bundle.getString("paid");
         b = findViewById(R.id.BConfirmCompletion);
         b2 = findViewById(R.id.BEmployeeConfirmPayment2);
-        if(paid==1)
+        if(paid.equals("1"))
         {
             b.setVisibility(View.VISIBLE);
         }
-        else if(paid==0){
+        else if(paid.equals("0")){
             b2.setVisibility(View.VISIBLE);
         }
 
@@ -106,7 +106,7 @@ public class finishedCookingDetails extends AppCompatActivity {
         }
         if(v.getId()== R.id.BEmployeeConfirmPayment2)
         {
-            paid=1;
+            paid="1";
             b.setVisibility(View.VISIBLE);
             b2.setVisibility(View.INVISIBLE);
         }

@@ -25,7 +25,7 @@ public class finishedCooking extends AppCompatActivity {
     FirebaseRecyclerAdapter<Request,OrderToDeliverViewHolder> adapter;
     String uid;
     String user;
-    int paid;
+    String paid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +65,7 @@ public class finishedCooking extends AppCompatActivity {
                 if(model.getOrderType().equals("DineIn")&&user.equals("waiter"))
                 {
                     viewHolder.txtOrderName.setText(model.getUid());
+                    paid=model.getPaid();
                     final Request clickItem=model;
                     viewHolder.setItemClickListener(new ItemClickListener()
                     {
@@ -75,6 +76,7 @@ public class finishedCooking extends AppCompatActivity {
                             orderList.putExtra("requestId", adapter.getRef(position).getKey());
                             orderList.putExtra("uid", uid);
                             orderList.putExtra("usertype", user);
+                            orderList.putExtra("paid", paid);
                             startActivity(orderList);
                         }
                     });
@@ -82,6 +84,7 @@ public class finishedCooking extends AppCompatActivity {
                 else if(model.getOrderType().equals("Takeout")&&user.equals("host"))
                 {
                     viewHolder.txtOrderName.setText(model.getUid());
+                    paid=model.getPaid();
                     final Request clickItem=model;
                     viewHolder.setItemClickListener(new ItemClickListener()
                     {
@@ -92,6 +95,7 @@ public class finishedCooking extends AppCompatActivity {
                             orderList.putExtra("requestId", adapter.getRef(position).getKey());
                             orderList.putExtra("uid", uid);
                             orderList.putExtra("usertype", user);
+                            orderList.putExtra("paid", paid);
                             startActivity(orderList);
                         }
                     });

@@ -10,7 +10,7 @@ public class Request {
     private List<Order> foods; // list of food order
     private String uid;
     private String orderType;
-    private int paid;
+    private String paid;
     public Request() {
     }
 
@@ -27,7 +27,7 @@ public class Request {
         this.total = total;
         this.foods = foods;
         this.orderType=orderType;
-        this.paid=0;
+        this.paid="0";
     }
 
     public String getPhone() {
@@ -81,11 +81,11 @@ public class Request {
     public void setOrderType(String orderType) {
         this.orderType = orderType;
     }
-    public int getPaid() {
+    public String getPaid() {
         return paid;
     }
 
-    public void setPaid(int paid) {
+    public void setPaid(String paid) {
         this.paid= paid;
     }
 

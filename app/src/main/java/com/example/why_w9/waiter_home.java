@@ -68,6 +68,13 @@ public class waiter_home extends AppCompatActivity
             i.putExtras(bundle);
             startActivity(i);
         }
+        if (v.getId()==R.id.myScheduleWaiter)
+        {
+            Intent intent = new Intent(this,MySchedule.class);
+            intent.putExtra("type","Waiters");
+            intent.putExtra("id","Waiter1");
+            startActivity(intent);
+        }
     }
 
 

@@ -58,6 +58,12 @@ public class chef_home extends AppCompatActivity {
             i.putExtras(bundle);
             startActivity(i);
         }
+        if (v.getId()==R.id.myScheduleChef){
+            Intent i = new Intent(this,MySchedule.class);
+            i.putExtra("type","Chefs");
+            i.putExtra("id","Chef1");
+            startActivity(i);
+        }
     }
 
 }

@@ -40,5 +40,11 @@ public class busboy_home extends AppCompatActivity
             i.putExtras(bundle);
             startActivity(i);
         }
+        if (v.getId()==R.id.myScheduleBusboy){
+            Intent i = new Intent(this,MySchedule.class);
+            i.putExtra("type","Busboys");
+            i.putExtra("id","Busboy1");
+            startActivity(i);
+        }
     }
 }

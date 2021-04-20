@@ -41,5 +41,11 @@ public class driver_home extends AppCompatActivity {
             i.putExtras(bundle);
             startActivity(i);
         }
+        if (v.getId() == R.id.myScheduleDriver){
+            Intent i = new Intent(this,MySchedule.class);
+            i.putExtra("type","Drivers");
+            i.putExtra("id","Driver1");
+            startActivity(i);
+        }
     }
 }

@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WHY_W9"
         tools:replace="android:theme">
-        <activity android:name=".Inventory"></activity>
+        <activity android:name=".MySchedule"></activity>
+        <activity android:name=".Inventory" />
         <activity android:name=".HostSchedules" />
         <activity android:name=".FoodAnalytics" />
         <activity android:name=".OperationsInformation" />
@@ -63,7 +64,7 @@
         <activity android:name=".order_detail" />
         <activity android:name=".OrdersList" />
         <activity android:name=".finishedCooking" />
-        \<activity android:name=".finishedCookingDetails" />
+        <activity android:name=".finishedCookingDetails" />
     </application>
 
 </manifest>

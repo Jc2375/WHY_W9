@@ -28,8 +28,8 @@
         android:layout_marginTop="667dp"
         android:layout_marginEnd="294dp"
         android:layout_marginBottom="16dp"
-        android:text="Sign out"
         android:onClick="onButtonClick"
+        android:text="Sign out"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,16 +39,12 @@
         android:id="@+id/BBusboyTableStatus"
         android:layout_width="146dp"
         android:layout_height="60dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="173dp"
-        android:layout_marginEnd="149dp"
-        android:layout_marginBottom="498dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
         android:onClick="onButtonClick"
         android:text="Table Status"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
     <ImageView
         android:id="@+id/imageView9"
@@ -74,4 +70,15 @@
         android:text="Clock in"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/myScheduleBusboy"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:onClick="onButtonClick"
+        android:text="My Schedule"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
 </androidx.constraintlayout.widget.ConstraintLayout>

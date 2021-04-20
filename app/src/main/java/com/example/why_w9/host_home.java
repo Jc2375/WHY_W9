@@ -76,5 +76,12 @@ public class host_home extends AppCompatActivity {
             Intent i = new Intent(host_home.this, table_status.class);
             startActivity(i);
         }
+        if (v.getId() == R.id.myScheduleHost)
+        {
+            Intent i = new Intent(this,MySchedule.class);
+            i.putExtra("type","Hosts");
+            i.putExtra("id","Host1");
+            startActivity(i);
+        }
     }
 }

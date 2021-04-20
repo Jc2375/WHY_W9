@@ -21,31 +21,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <EditText
         android:id="@+id/edtAmount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="162dp"
+        android:layout_height="59dp"
         android:layout_marginStart="54dp"
         android:layout_marginTop="58dp"
         android:layout_marginEnd="165dp"
         android:layout_marginBottom="484dp"
-        android:hint="Enter Amount"
+        android:hint="Add A Tip?"
+        android:inputType="number"
         android:textColor="#07A5ED"
-        android:textSize="30sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/BPaypalPayment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="54dp"
-        android:layout_marginTop="253dp"
+        android:layout_marginTop="168dp"
         android:layout_marginEnd="134dp"
-        android:layout_marginBottom="302dp"
+        android:layout_marginBottom="387dp"
         android:onClick="onButtonClick"
         android:text="Paypal or Credit/Debit"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -69,15 +72,46 @@
 
     <Button
         android:id="@+id/BCashPayment"
-        android:onClick="onButtonClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="57dp"
-        android:layout_marginTop="138dp"
-        android:layout_marginEnd="266dp"
-        android:layout_marginBottom="417dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="301dp"
+        android:layout_marginEnd="269dp"
+        android:layout_marginBottom="254dp"
+        android:onClick="onButtonClick"
         android:text="Cash "
         android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bConfirmTip"
+        android:layout_width="116dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="277dp"
+        android:layout_marginTop="71dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="484dp"
+        android:onClick="onButtonClick"
+        android:text="Confirm Tip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="247dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="337dp"
+        android:text="_________________________________________________________"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

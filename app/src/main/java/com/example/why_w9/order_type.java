@@ -7,11 +7,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +39,8 @@ public class order_type extends AppCompatActivity {
     CartAdapter adapter;
     String uid; String total;
 
-
+    String requestID;
+    public static Float amount3;
 
 
     @Override
@@ -52,7 +57,6 @@ public class order_type extends AppCompatActivity {
         cart = new Database(this).getCarts();
 
 
-
     }
     public void onButtonClick(View v) {
         if (v.getId() == R.id.bDineIn) {
@@ -65,6 +69,23 @@ public class order_type extends AppCompatActivity {
             bundle.putString("requestId",w);
             Intent i = new Intent(order_type.this, payment_type.class);
             i.putExtras(bundle);
+
+            //Pain -------------------------------------------------
+            DatabaseReference reff;
+            reff = FirebaseDatabase.getInstance().getReference("Requests").child(w);
+            reff.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    String totalGet = dataSnapshot.child("total").getValue().toString();
+                    amount3 = Float.parseFloat(totalGet);
+                }
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    System.out.println("The read failed: " + databaseError.getCode());
+                }
+            });
+            //-----------------------------------------------------------------------------
+
             startActivity(i);
         }
         if (v.getId() == R.id.bTakeout) {
@@ -91,6 +112,23 @@ public class order_type extends AppCompatActivity {
             bundle.putString("requestId",w);
             Intent i = new Intent(order_type.this, delivery_address.class);
             i.putExtras(bundle);
+
+            //Pain -------------------------------------------------
+            DatabaseReference reff;
+            reff = FirebaseDatabase.getInstance().getReference("Requests").child(w);
+            reff.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    String totalGet = dataSnapshot.child("total").getValue().toString();
+                    amount3 = Float.parseFloat(totalGet);
+                }
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    System.out.println("The read failed: " + databaseError.getCode());
+                }
+            });
+            //-----------------------------------------------------------------------------
+
             startActivity(i);
         }
 

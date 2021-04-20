@@ -374,8 +374,19 @@ public class table extends AppCompatActivity
 
     public void onButtonClick(View v) {
         if (v.getId() == R.id.Available) {
+            FirebaseDatabase.getInstance().getReference("Table").child(String.valueOf(global.Global.TN)).child("Status").setValue("Available");
+        }
 
+        if (v.getId() == R.id.Taken) {
+            FirebaseDatabase.getInstance().getReference("Table").child(String.valueOf(global.Global.TN)).child("Status").setValue("Taken");
+        }
 
+        if (v.getId() == R.id.Reserved) {
+            FirebaseDatabase.getInstance().getReference("Table").child(String.valueOf(global.Global.TN)).child("Status").setValue("Reserved");
+        }
+
+        if (v.getId() == R.id.Dirty) {
+            FirebaseDatabase.getInstance().getReference("Table").child(String.valueOf(global.Global.TN)).child("Status").setValue("Dirty");
         }
     }
 

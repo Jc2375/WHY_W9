@@ -99,6 +99,23 @@ public class order_type extends AppCompatActivity {
             bundle.putString("requestId",w);
             Intent i = new Intent(order_type.this, payment_type.class);
             i.putExtras(bundle);
+
+            //Pain -------------------------------------------------
+            DatabaseReference reff;
+            reff = FirebaseDatabase.getInstance().getReference("Requests").child(w);
+            reff.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    String totalGet = dataSnapshot.child("total").getValue().toString();
+                    amount3 = Float.parseFloat(totalGet);
+                }
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    System.out.println("The read failed: " + databaseError.getCode());
+                }
+            });
+            //-----------------------------------------------------------------------------
+
             startActivity(i);
         }
         if (v.getId() == R.id.bDelivery) {

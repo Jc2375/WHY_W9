@@ -26,7 +26,7 @@ public class login extends AppCompatActivity {
     EditText mEmail, mPassword;
     Button mLoginBtn;
     FirebaseAuth fAuth;
-
+    public static String uid= FirebaseAuth.getInstance().getCurrentUser().getUid();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,7 +116,7 @@ public class login extends AppCompatActivity {
 
 
 
-                                    String uid= FirebaseAuth.getInstance().getCurrentUser().getUid();
+
                                     DatabaseReference reff;
                                     reff = FirebaseDatabase.getInstance().getReference("User").child(uid);
 

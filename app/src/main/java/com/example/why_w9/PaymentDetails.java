@@ -65,6 +65,8 @@ public class PaymentDetails extends AppCompatActivity {
             case R.id.bHome: {
                 Toast.makeText(PaymentDetails.this, "Your Order Has Been Placed Successfully!", Toast.LENGTH_SHORT).show();
 
+
+
                 //Toast.makeText(PaymentDetails.this, "Your app will now close automatically.", Toast.LENGTH_SHORT).show();
                 //Thread.sleep(5000);
                 //finishAffinity();

@@ -60,6 +60,7 @@
         android:layout_marginEnd="184dp"
         android:layout_marginBottom="228dp"
         android:text="Manage Tables"
+        android:onClick="onButtonClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

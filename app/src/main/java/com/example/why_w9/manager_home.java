@@ -7,10 +7,15 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 
 public class manager_home extends AppCompatActivity
 {
     String uid;
+    public static String ID= FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +42,11 @@ public class manager_home extends AppCompatActivity
             bundle.putString("uid",uid);
             Intent i = new Intent(manager_home.this, OrdersList.class);
             i.putExtras(bundle);
+            startActivity(i);
+        }
+        if(v.getId() == R.id. BManageTables)
+        {
+            Intent i = new Intent(manager_home.this, OrdersList.class);
             startActivity(i);
         }
     }

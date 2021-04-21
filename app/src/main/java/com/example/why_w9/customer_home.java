@@ -12,6 +12,9 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class customer_home extends AppCompatActivity
 {
+
+    public static String ID= FirebaseAuth.getInstance().getCurrentUser().getUid();
+
     private FirebaseAuth mFirebaseAuth; //logout part 3
     String uid;
     @Override

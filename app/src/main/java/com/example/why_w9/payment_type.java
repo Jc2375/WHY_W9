@@ -94,10 +94,12 @@ public class payment_type extends AppCompatActivity {
     public void onButtonClick(View v) {
         switch (v.getId()) {
             case R.id.BPaypalPayment: {
-
+                    EditText tips = (EditText) findViewById(R.id.edtAmount);
+                    String tipCheck = tips.getText().toString();
                     amount2 = Float.parseFloat(edtAmout.getText().toString());
-                    float amount4 = (amount2)  + (order_type.amount3) ; //NEED TO ADD HERE.. current code does not add correct values
-                    amount4 = (float) (amount4 * 1.07);
+
+                    amount3 = order_type.amount3 * (float)1.07;
+                    float amount4 = (amount2)  + (amount3) ; //NEED TO ADD HERE.. current code does not add correct values
                     amount = String.valueOf(amount4);
 
 
@@ -114,11 +116,7 @@ public class payment_type extends AppCompatActivity {
 
                 //setContentView(R.layout.activity_main);
             }
-            case R.id.bConfirmTip: {
 
-                Toast.makeText(payment_type.this, "Tip Successfully Added!", Toast.LENGTH_SHORT).show();
-
-            }
         }
     }
 

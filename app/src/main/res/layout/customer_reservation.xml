@@ -55,7 +55,8 @@
         android:inputType="number"
         app:layout_constraintStart_toEndOf="@+id/textView27"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        tools:layout_editor_absoluteY="117dp" />
+        tools:layout_editor_absoluteY="117dp"
+        android:importantForAutofill="no" />
 
     <Spinner
         android:id="@+id/time_spinner"

@@ -3,6 +3,12 @@
     <string name="create_reservation">Create Reservation</string>
     <string name="number_of_guests">Number Of Guests:</string>
     <string name="done">Done</string>
+    <string name="busboy">Busboy</string>
+    <string name="sign_out">Sign out</string>
+    <string name="table_status">Table Status</string>
+    <string name="my_schedule">My Schedule</string>
+    <string name="clock_in_out">Clock in / Out</string>
+    <string name="todo">TODO</string>
 
     <string-array name="reservation_times">
         <item>8:00 AM</item>

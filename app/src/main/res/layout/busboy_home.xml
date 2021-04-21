@@ -13,7 +13,7 @@
         android:layout_marginTop="79dp"
         android:layout_marginEnd="156dp"
         android:layout_marginBottom="599dp"
-        android:text="Busboy"
+        android:text="@string/busboy"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +29,7 @@
         android:layout_marginEnd="294dp"
         android:layout_marginBottom="16dp"
         android:onClick="onButtonClick"
-        android:text="Sign out"
+        android:text="@string/sign_out"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +42,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
         android:onClick="onButtonClick"
-        android:text="Table Status"
+        android:text="@string/table_status"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
@@ -58,7 +58,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/busboyhand" />
+        app:srcCompat="@drawable/busboyhand"
+        android:contentDescription="@string/todo" />
 
     <Button
         android:id="@+id/BbusboyClockIn"
@@ -67,7 +68,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:onClick="onButtonClick"
-        android:text="Clock in"
+        android:text="@string/clock_in_out"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -78,7 +79,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="20dp"
         android:onClick="onButtonClick"
-        android:text="My Schedule"
+        android:text="@string/my_schedule"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
 </androidx.constraintlayout.widget.ConstraintLayout>

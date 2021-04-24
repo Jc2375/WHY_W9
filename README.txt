@@ -2,7 +2,12 @@
 
 Restaurant Automation App
 
-## Usage
+Running the Application:
+
+* Clone Github repository and import into Android Studio
+* Sync the Gradle
+* Add an emulator to run the app on
+* Click "Run"
 
 After running the application, you will be prompted to login with an email and password, or to register and account:
 

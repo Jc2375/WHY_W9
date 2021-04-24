@@ -12,8 +12,8 @@ Running the Application:
 After running the application, you will be prompted to login with an email and password, or to register and account:
 
 * Manager: {manager@gmail.com, managerpassword}
-* Chef: {chef@gmail.com, chefpassword}
-* Busboy: {busboy@mail.com, busboypassword}
-* Waiter: waiter@gmail.com, waiterpassword}
-* Customer: {customer@gmail.com, customerpassword}
-* Host: {host@gmail.com, hostpassword}
+* Chef: {chef@gmail.com, password}
+* Busboy: {busboy@mail.com, password}
+* Waiter: waiter@gmail.com, password}
+* Customer: {customer@gmail.com, password}
+* Host: {host@gmail.com, password}
